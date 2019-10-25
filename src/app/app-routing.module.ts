@@ -12,6 +12,8 @@ import { HomeComponent } from './components/home/home.component';
 import { NavTabsComponent } from './components/nav-tabs/nav-tabs.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { DetailsBookComponent } from './components/details-book/details-book.component';
 
 const routes: Routes=[
   {path: '', redirectTo: '/home', pathMatch:'full'},
@@ -24,6 +26,10 @@ const routes: Routes=[
   {path: 'navbar', component: NavbarComponent},
   {path: 'login', component: LoginComponent},
   {path: 'registro', component: RegistroComponent},
+  {path: 'profile', component: ProfileComponent },
+
+  {path: 'book/:id', component: DetailsBookComponent },
+  
 
   {path: 'bar', component: NavTabsComponent},
 

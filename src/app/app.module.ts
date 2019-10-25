@@ -32,7 +32,9 @@ import { HomeComponent } from './components/home/home.component';
 import { NavTabsComponent } from './components/nav-tabs/nav-tabs.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { LoginComponent } from './components/login/login.component';
-
+import { ProfileComponent } from './components/profile/profile.component';
+import{AngularFirestore}from '@angular/fire/firestore';
+import { DetailsBookComponent } from './components/details-book/details-book.component';
 
 const MaterialComponents = [
   MatButtonModule
@@ -41,6 +43,7 @@ const MaterialComponents = [
 @NgModule({
   declarations: [
     AppComponent,
+    ProfileComponent,
     HeaderComponent,
     UserComponent,
     FooterComponent,
@@ -48,6 +51,7 @@ const MaterialComponents = [
     AddBookComponent,
     NavbarComponent,
     HomeComponent,
+    DetailsBookComponent,
     RegistroComponent,
     LoginComponent,
     NavTabsComponent,
@@ -83,7 +87,7 @@ const MaterialComponents = [
     MatTabsModule,
     MaterialComponents
   ],
-  providers: [AngularFireAuth],
+  providers: [AngularFireAuth, AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
