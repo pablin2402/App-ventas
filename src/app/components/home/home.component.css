@@ -1,0 +1,14 @@
+.container{
+    height:100vh;
+    background: url(/assets/img/sw.png) no-repeat;
+    flex: 1 0.5 auto;
+}
+.book-now-container{
+padding: 35px 115px;
+}
+.book-now-button{
+    width: 170px;
+    color: white;
+    border: 1px solid white;
+    text-transform: uppercase;
+}
