@@ -17,7 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { AddBookComponent } from './components/add-book/add-book.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import {FlexLayoutModule } from '@angular/flex-layout';
-
+import {ModalComponent} from './components/modal/modal.component';
 import {AngularFireModule } from '@angular/fire';
 import {AngularFireDatabaseModule } from '@angular/fire/database';
 import{AngularFireAuth} from '@angular/fire/auth';
@@ -51,6 +51,7 @@ const MaterialComponents = [
     AddBookComponent,
     NavbarComponent,
     HomeComponent,
+    ModalComponent,
     DetailsBookComponent,
     RegistroComponent,
     LoginComponent,
