@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
+import *as firebaseapp from 'firebase/app';
+import *as geofirex from 'geofirex';
+import{switchMap } from 'rxjs/operators';
+import { Observable, BehaviorSubject } from 'rxjs';
 @Component({
   selector: 'app-google-map',
   templateUrl: './google-map.component.html',
@@ -7,16 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GoogleMapComponent implements OnInit {
 
-  lat: number;
-    lng: number;
+  title = 'My first AGM project';
+  lat :number;
+  lng :number;
 
+  geo= geofirex.init(firebaseapp);
+  points : Observable <any>;
 
+  radius = new BehaviorSubject(0.5);
 
   constructor() { }
 
   ngOnInit() {
-    this.getUserLocation()
-  }
+     this.getUserLocation;
+    }
 
   private getUserLocation() {
     /// locate the user
@@ -27,5 +34,7 @@ export class GoogleMapComponent implements OnInit {
 
       });
     }
-  }
+  
+  
+}
 }

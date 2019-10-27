@@ -28,8 +28,11 @@
 
 
                       <div class="form-group">
-                        <input type="password" name="password" class="form-control" placeholder="Password" [(ngModel)]="password" required minlength="5"
+                        <input type="password" name="password" class="form-control" aria-describedby="passwordHelpBlock" placeholder="Password" [(ngModel)]="password" required minlength="5"
                           maxlength="10">
+                          <small id="passwordHelpBlock" class="form-text text-muted">
+                              La contraseña debe tener mínimo 8 caracteres de longitud.
+                            </small>
                       </div>
                       
                       <div class="alert alert-danger" role="alert" *ngIf="password.touched && !password.valid">
@@ -64,3 +67,4 @@
           </div>
         </div>
       </section>
+
