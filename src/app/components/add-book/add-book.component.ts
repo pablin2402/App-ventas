@@ -24,10 +24,15 @@ export class AddBookComponent implements OnInit {
       });
   }
   onDeleteBook(idBook: string): void {
-    const confirmacion = confirm('Are you sure?');
+    const confirmacion = confirm('¿Estás seguro que deseas eliminar el producto?');
     if (confirmacion) {
       this.dataApi.deleteBook(idBook);
     }
+  }
+
+  onPreUpdateBook(book:GalletaInterface){
+    //this.dataApi.selectedBook=Object.assign({},book);
+    console.log('BOOK',book);
   }
 
 }

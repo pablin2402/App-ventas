@@ -67,7 +67,9 @@ export class HeaderComponent  implements OnInit{
       }
     });
   }
-
+  onLogout() {
+    this.afsAuth.auth.signOut();
+  }
 }
 
 

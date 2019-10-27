@@ -17,7 +17,9 @@ export class DataApiService {
   private books: Observable<GalletaInterface[]>;
   private bookDoc: AngularFirestoreDocument<GalletaInterface>;
   private book: Observable<GalletaInterface>;
-
+  public selectedBook: GalletaInterface = {
+    
+  };
   getAllBooks() {
     return this.books= this.booksCollection.snapshotChanges()
     .pipe(map(changes => {
