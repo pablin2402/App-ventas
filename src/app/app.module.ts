@@ -21,11 +21,11 @@ import {ModalComponent} from './components/modal/modal.component';
 import {AngularFireModule } from '@angular/fire';
 import {AngularFireDatabaseModule } from '@angular/fire/database';
 import{AngularFireAuth} from '@angular/fire/auth';
-
+import{AgmCoreModule} from '@agm/core';
 
 import { from } from 'rxjs';
 //FIREBASE CONFIGURACION 
-
+export const firebaseConfig =environment.firebaseConfig;
 
 import { environment } from '../environments/environment';
 import { HomeComponent } from './components/home/home.component';
@@ -35,10 +35,13 @@ import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import{AngularFirestore}from '@angular/fire/firestore';
 import { DetailsBookComponent } from './components/details-book/details-book.component';
+import { importExpr } from '@angular/compiler/src/output/output_ast';
+import { GoogleMapComponent } from './components/google-map/google-map.component';
 
 const MaterialComponents = [
   MatButtonModule
 ];
+
 
 @NgModule({
   declarations: [
@@ -51,6 +54,7 @@ const MaterialComponents = [
     AddBookComponent,
     NavbarComponent,
     HomeComponent,
+    GoogleMapComponent,
     ModalComponent,
     DetailsBookComponent,
     RegistroComponent,
@@ -75,6 +79,9 @@ const MaterialComponents = [
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     FlexLayoutModule,
+    AgmCoreModule.forRoot({
+        apiKey: 'AIzaSyDmPQrfklKHKfqwIOuQZ92Q7G0TW0AYZG8'
+    }),
     BrowserAnimationsModule,
 
     FormsModule

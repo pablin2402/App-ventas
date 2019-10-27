@@ -1,22 +1,52 @@
-<section id="book" class="mt-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
-              <div class="card_book">
-                <div class="card">
-                  <div class="card-body text-center">
-                    <p>
-                      <img class="img-fluid" src="{{book.portada}}" alt="{{book.titulo}}">
-                    </p>
-                    <h4 class="card-title">{{book.titulo}}</h4>
-                    <p class="card-text">
-                      {{book.descripcion}}
-                    </p>
-                    <a href="{{book.link_amazon}}" target="_blank" class="btn btn-block btn-primary">Buy</a>
+
+      <div class="card text-center">
+          <div class="card-header">
+              <h4 class="card-title">{{book.titulo}}</h4>
+          </div>
+
+          <div class="card-body">
+        
+              <div class="row no-gutters">
+              <div class="col-md-4">
+                  <img class="img-fluid" src="{{book.portada}}" alt="{{book.titulo}}">
                   </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                    <div class="jumbotron">
+                        <h4 class="display-4">{{book.titulo}}</h4>
+                        
+                        <p class="lead">de {{book.autor}}</p>
+                        <hr class="my-4"> 
+                    </div>
+                    <div class="card border-warning mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Precio</div>
+                          <p class="card-text">{{book.precio}} Bs.</p>
+                        </div>
+                      </div>
+                   <p class="card-text">
+                      
+                      {{book.descripcion}}
+                    
+                  </p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
               </div>
             </div>
-          </div>
+
+            <div class="jumbotron">
+              <h4 class="card-title" >Descripción del Producto</h4>
+              
+              <p class="lead"> {{book.descripcion}}</p>
+                <hr class="my-4">
+                <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+              </div>
+            <div class="card-footer text-muted">
+                <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                © 2019, Dev-Thinking.com, Inc. o afiliados. Todos los derechos reservados.
+            </div>
         </div>
-      </section>
+
+        

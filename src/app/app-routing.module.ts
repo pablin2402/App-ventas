@@ -16,6 +16,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { DetailsBookComponent } from './components/details-book/details-book.component';
 import{AuthGuard}from'./guards/auth.guard';
 import { from } from 'rxjs';
+import { GoogleMapComponent } from './components/google-map/google-map.component';
 
 const routes: Routes=[
   {path: '', redirectTo: '/home', pathMatch:'full'},
@@ -31,6 +32,7 @@ const routes: Routes=[
   {path: 'login', component: LoginComponent},
   {path: 'registro', component: RegistroComponent},
   {path: 'profile', component: ProfileComponent },
+  {path: 'google', component: GoogleMapComponent },
 
   {path: 'book/:id', component: DetailsBookComponent },
   

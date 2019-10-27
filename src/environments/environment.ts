@@ -22,7 +22,9 @@ export const environment = {
     messagingSenderId: "714964605525",
     appId: "1:714964605525:web:608c6a8975cbde711192dc",
     measurementId: "G-Y3GHYT9Q41"
-  }
+  },
+
+  googleMapsKey:'AIzaSyDmPQrfklKHKfqwIOuQZ92Q7G0TW0AYZG8'
 };
 
 
