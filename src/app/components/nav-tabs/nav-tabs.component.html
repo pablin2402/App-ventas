@@ -6,6 +6,7 @@
     [active]="home.isActive"> 
     Home
     </a>
+
     <a mat-tab-link routerLink="/addbook"
     routerLinkActive #configuraciones="routerLinkActive"
     [active]="configuraciones.isActive"> 
@@ -16,10 +17,16 @@
     [active]="configuraciones.isActive"> 
     Configuraciones
     </a>
+
     <a mat-tab-link routerLink="/registro"
     routerLinkActive #configuraciones="routerLinkActive"
     [active]="configuraciones.isActive"> 
     Registro
+    </a>
+    <a mat-tab-link routerLink="/contacto"
+    routerLinkActive #contacto="routerLinkActive"
+    [active]="contacto.isActive"> 
+    Contacto
     </a>
   </nav>
  
