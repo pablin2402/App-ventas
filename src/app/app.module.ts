@@ -39,6 +39,7 @@ import { DetailsBookComponent } from './components/details-book/details-book.com
 import { importExpr } from '@angular/compiler/src/output/output_ast';
 import { GoogleMapComponent } from './components/google-map/google-map.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
+import { CompraComponent } from './components/compra/compra.component';
 
 const MaterialComponents = [
   MatButtonModule
@@ -63,7 +64,8 @@ const MaterialComponents = [
     LoginComponent,
     NavTabsComponent,
     AboutusComponent,
-    ContactoComponent
+    ContactoComponent,
+    CompraComponent
     
   ],
   imports: [ 

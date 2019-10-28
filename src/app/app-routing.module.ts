@@ -18,6 +18,7 @@ import{AuthGuard}from'./guards/auth.guard';
 import { from } from 'rxjs';
 import { GoogleMapComponent } from './components/google-map/google-map.component';
 import { ContactoComponent} from './components/contacto/contacto.component';
+import { CompraComponent} from './components/compra/compra.component';
 
 const routes: Routes=[
   {path: '', redirectTo: '/home', pathMatch:'full'},
@@ -38,6 +39,7 @@ const routes: Routes=[
   {path: 'book/:id', component: DetailsBookComponent },
   
   {path: 'contacto', component: ContactoComponent},
+  {path: 'comprar', component: CompraComponent},
 
   {path: 'bar', component: NavTabsComponent},
 

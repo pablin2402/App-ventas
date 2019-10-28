@@ -10,13 +10,25 @@
                       <div class="alert alert-danger" role="alert" *ngIf="isError">
                         Something is wrong!
                       </div>
+                      <!--EMAIL-->
                       <div class="form-group">
                         <input [(ngModel)]="email" 
                         type="email" id="email" name="email" class="form-control" placeholder="Email" required>
                       </div>
+                      <div class="alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+                          <div class="container-error-message" *ngIf="email.errors.required">
+                              Campo requerido.
+                          </div>
+                      </div>
+                      <!--PASSWORD-->
                       <div class="form-group">
                         <input [(ngModel)]="password" 
                         type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+                      </div>
+                      <div class="alert-danger" *ngIf="password.invalid && (password.dirty || password.touched)">
+                          <div class="container-error-message" *ngIf="password.errors.required">
+                              Campo requerido.
+                          </div>
                       </div>
                       <button type="submit" class="btn btn-lg btn-primary btn-block">Login</button>
                       <div class="form-group">

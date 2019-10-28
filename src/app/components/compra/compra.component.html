@@ -1,0 +1,50 @@
+<div class="form-container">
+    <h1>Detalles de su Compra</h1>
+    <form [formGroup]="compraForm" (ngSubmit)="comprar()">
+        <!--NOMBRE-->
+        <input type="text" formControlName="nombre" placeholder="Ingrese su nombre">
+        <div class="alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+            <div class="container-error-message" *ngIf="nombre.errors.required">
+                Campo requerido.
+            </div>
+        </div>
+        <!--CELULAR-->
+        <input type="text" formControlName="cel" placeholder="Ingrese su número telefónico">
+        <div class="alert-danger" *ngIf="cel.invalid && (cel.dirty || cel.touched)">
+            <div class="container-error-message" *ngIf="cel.errors.required">
+                Campo requerido.
+            </div>
+        </div>
+        <!--DIRECCIÓN-->
+        <textarea formControlName="direccion" placeholder="Ingrese su dirección"></textarea>
+        <div class="alert-danger" *ngIf="direccion.invalid && (direccion.dirty || direccion.touched)">
+            <div class="container-error-message" *ngIf="direccion.errors.required">
+                Campo requerido.
+            </div>
+            <div class="container-error-message" *ngIf="direccion.errors.minlength">
+                Message must be at least 10 characters long.
+            </div>
+        </div>
+        <!--CANTIDAD DEL PRODUCTO-->
+        <input type="text" formControlName="cantidad" placeholder="Cantidad deseada de este producto">
+        <div class="alert-danger" *ngIf="cantidad.invalid && (cantidad.dirty || cantidad.touched)">
+            <div class="container-error-message" *ngIf="cantidad.errors.required">
+                Campo requerido.
+            </div>
+        </div>
+
+        <button type="submit" class="btn-comprar" [disabled]="!compraForm.valid">Realizar Compra</button>
+    </form>
+</div>
+
+
+
+<!--
+  <div id="datos">
+       <h4  routerLink="/book/{{book.id}}" class="badge badge-info">PRODUCTO: {{book.titulo}}</h4>
+       <p   class="badge badge-info">
+             TOTAL A PAGAR:   {{book.precio}}€
+               Bs.</p><br>
+      
+    </div>
+-->

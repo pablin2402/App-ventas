@@ -15,18 +15,21 @@
                         {{msgError}}
                       </div>
 
-                       
+                       <!--EMAIL-->
                       <div class="form-group">
                         <input type="email" name="email" class="form-control" placeholder="Email" 
                         [(ngModel)]="email" required minlength="8">
                       </div>
-                       
-                      <div class="alert alert-danger" role="alert" *ngIf="email.touched && !email.valid">
-                        <div *ngIf="email.errors.required">Es necesario tener un correo</div>
-                        <div *ngIf="email.errors.minlength">Email must be at least 8 characters</div>
+                      <div class="alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+                          <div class="container-error-message" *ngIf="email.errors.required">
+                              Campo requerido.
+                          </div>
+                          <div class="container-error-message" *ngIf="email.errors.required">
+                              Email must be at least 8 characters.
+                          </div>
                       </div>
 
-
+                      <!--PASSWORD-->
                       <div class="form-group">
                         <input type="password" name="password" class="form-control" aria-describedby="passwordHelpBlock" placeholder="Password" [(ngModel)]="password" required minlength="5"
                           maxlength="10">
@@ -34,10 +37,13 @@
                               La contraseña debe tener mínimo 8 caracteres de longitud.
                             </small>
                       </div>
-                      
-                      <div class="alert alert-danger" role="alert" *ngIf="password.touched && !password.valid">
-                        <div *ngIf="password.errors.required">Password is required</div>
-                        <div *ngIf="password.errors.minlength">Password must be at least 5 characters</div>
+                      <div class="alert-danger" *ngIf="password.invalid && (password.dirty || password.touched)">
+                          <div class="container-error-message" *ngIf="password.errors.required">
+                              Campo requerido.
+                          </div>
+                          <div class="container-error-message" *ngIf="password.errors.required">
+                              Password must be at least 8 characters.
+                          </div>
                       </div>
                       
                      

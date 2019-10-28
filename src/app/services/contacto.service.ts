@@ -14,7 +14,6 @@ export class ContactoService {
     this.contactCollection= afs.collection<MessageI>('contacts');
   }
   
- 
    saveMessage(newContact:  MessageI): void{
     this.contactCollection.add(newContact);
   }
