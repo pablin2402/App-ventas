@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { GalletaInterface } from '../model/galleta';
 import { Observable } from 'rxjs/internal/Observable';
+import { MessageI} from '../model/message.interface';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -9,10 +10,12 @@ import { map } from 'rxjs/operators';
 })
 export class DataApiService {
 
+  
   constructor(private afs: AngularFirestore) { 
     this.booksCollection =afs.collection<GalletaInterface>('books');
     this.books=this.booksCollection.valueChanges();
   }
+  private contactCollection: AngularFirestoreCollection<MessageI>;
   private booksCollection: AngularFirestoreCollection<GalletaInterface>;
   private books: Observable<GalletaInterface[]>;
   private bookDoc: AngularFirestoreDocument<GalletaInterface>;
@@ -20,6 +23,9 @@ export class DataApiService {
   public selectedBook: GalletaInterface = {
     
   };
+  saveMessage(newContact:  MessageI): void{
+    this.contactCollection.add(newContact);
+  }
   getAllBooks() {
     return this.books= this.booksCollection.snapshotChanges()
     .pipe(map(changes => {

@@ -37,6 +37,7 @@ import{AngularFirestore}from '@angular/fire/firestore';
 import { DetailsBookComponent } from './components/details-book/details-book.component';
 import { importExpr } from '@angular/compiler/src/output/output_ast';
 import { GoogleMapComponent } from './components/google-map/google-map.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
 
 const MaterialComponents = [
   MatButtonModule
@@ -60,7 +61,8 @@ const MaterialComponents = [
     RegistroComponent,
     LoginComponent,
     NavTabsComponent,
-    AboutusComponent
+    AboutusComponent,
+    ContactoComponent
     
   ],
   imports: [ 
