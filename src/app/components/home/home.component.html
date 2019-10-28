@@ -1,5 +1,5 @@
 
- <div class="bd-example" >
+  <div class="bd-example" *ngFor="let book of books">
             <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
               <ol class="carousel-indicators">
                 <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -8,17 +8,19 @@
               </ol>
               <div class="carousel-inner" >
                 <div class="carousel-item active">
-                  <img src="/assets/img/sw.png" class="d-block w-100" alt="...">
+                  <!-- FALTA PONER PARA OFERTAS-->
+                  <img routerLink="/cookies" src="https://firebasestorage.googleapis.com/v0/b/ventaproductos-5e03c.appspot.com/o/mo.jpg?alt=media&token=22bd4d8e-e9f9-4344-ae7a-741e8594e099" class="d-block w-100" alt="...">
+
                   <div class="carousel-caption d-none d-md-block">
-                    <h5>Los mejores precios</h5>
-                    <p>Nintendo Switch</p>
+                    <h5>El sabe cual comerse y a que hora</h5>
+                    <p>Y tú¿Ya compraste las tuyas?</p>
                   </div>
                 </div>
                 <div class="carousel-item">
                   <img src="/assets/img/s.jpg" class="d-block w-100" alt="...">
                   <div class="carousel-caption d-none d-md-block">
                     <h5>Nintendo</h5>
-                    <p>Nintendo Switch Yellow Edition</p>
+                    <p>{{book.titulo}}</p>
                   </div>
                 </div>
                

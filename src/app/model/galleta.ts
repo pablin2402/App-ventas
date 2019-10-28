@@ -9,6 +9,6 @@ export interface GalletaInterface{
     autor?: string;
     oferta?: string;
     id?: string;
-  userUid?: string;
+    userUid?: string;
 
 }

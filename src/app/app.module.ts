@@ -39,6 +39,8 @@ import { DetailsBookComponent } from './components/details-book/details-book.com
 import { importExpr } from '@angular/compiler/src/output/output_ast';
 import { GoogleMapComponent } from './components/google-map/google-map.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
+import { ListcookiesComponent } from './components/listcookies/listcookies.component';
+import { DetailsCookieComponent } from './components/details-cookie/details-cookie.component';
 
 const MaterialComponents = [
   MatButtonModule
@@ -48,9 +50,11 @@ const MaterialComponents = [
 @NgModule({
   declarations: [
     AppComponent,
+    ListcookiesComponent,
     ProfileComponent,
     HeaderComponent,
     UserComponent,
+    DetailsCookieComponent,
     FooterComponent,
     ConfiguracionesComponent,
     AddBookComponent,
@@ -83,7 +87,7 @@ const MaterialComponents = [
     AngularFireDatabaseModule,
     FlexLayoutModule,
     AgmCoreModule.forRoot({
-        apiKey: 'API'
+        apiKey: 'AIzaSyDmPQrfklKHKfqwIOuQZ92Q7G0TW0AYZG8'
     }),
     BrowserAnimationsModule,
     ReactiveFormsModule,
