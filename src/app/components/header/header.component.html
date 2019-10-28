@@ -23,39 +23,67 @@
 
       <form class="form-inline my-2 my-lg-0">
 
-          <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-            <mat-icon>search</mat-icon>
-          </button>
-        </form>
+         <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+               <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                 <mat-icon>search</mat-icon>
+               </button>
+       </form>
 
       <ul class="navbar-nav ml-auto">
 
-        <li class="nav-item" *ngIf="!isLogged">
-          <a class="nav-link" routerLink="/registro">Registry</a>
-        </li>
+             <li class="nav-item" *ngIf="!isLogged">
+               <a class="nav-link" routerLink="/registro">
+                 Registry
+               </a>
+             </li>
 
-        <li class="nav-item" *ngIf="isLogged">
-          <a class="nav-link" routerLink="/profile">Your Profile</a>
-        </li>
+             <li class="nav-item" *ngIf="isLogged">
+               <a class="nav-link" routerLink="/profile">
+                 Your Profile
+               </a>
+             </li>
 
-        <li class="nav-item" *ngIf="isLogged">
-          <a class="nav-link" routerLink="/carrito">Cart</a>
-        </li>
+             <li class="nav-item" *ngIf="isLogged"><!-- & User.role == 'Cliente'" -->
+               <a class="nav-link" routerLink="/carrito">
+               Cart
+               </a>
+             </li>
 
-        <li class="nav-item" *ngIf="isLogged">
-          <a class="nav-link" routerLink="/admin/list-books">About Us</a>
-        </li>
+             <li class="nav-item" *ngIf="isLogged">
+               <a class="nav-link" routerLink="/admin/list-books">
+                 About Us
+               </a>
+             </li>
 
-        <li class="nav-item" *ngIf="!isLogged">
-          <a class="nav-link" routerLink="/login">Log In</a>
-        </li>
+             <li class="nav-item" *ngIf="!isLogged">
+               <a class="nav-link" routerLink="/login">
+                 Log In
+                 </a>
+              </li>
 
-        <li class="nav-item" *ngIf="isLogged">
-          <a href="#" class="nav-link" (click)="onLogout()">Log Out</a>
-        </li>
+             <li class="nav-item" *ngIf="isLogged">
+               <a href="#" class="nav-link" (click)="onLogout()">
+                 Log Out
+               </a>
+             </li>
 
-      </ul>
 
-    </div>
-  </nav>
+            <!--<a
+            ngIf = "User.role == Cliente"
+            routerLinkActive = "active"
+            routerLink = "/"
+            [routerLinkActiveOptions] ="{exact:true}">
+            Pedidos
+            </a>
+            <a
+            *NgIf = "user.role == 'Administrador'"
+            routerLinkActive = "active"
+            routerLink = "/add-book"
+            [routerLinkActiveOptions]="{exact:true}">
+            Administracion
+            </a>
+            //cambiar la dir-->
+
+     </ul>
+  </div>
+</nav>

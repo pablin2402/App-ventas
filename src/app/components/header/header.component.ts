@@ -31,7 +31,15 @@ export class HeaderComponent  implements OnInit{
   counter=0;
   userStatusColor="warm";
 
-  constructor(private _backendservice: BackendService, private authService: AuthService, private afsAuth: AngularFireAuth) { }
+  constructor(
+    public auth: AuthService,
+    private _backendservice: BackendService,
+    private authService: AuthService,
+    private afsAuth: AngularFireAuth
+  )
+  {
+
+  }
 
   ngOnInit() {
     /*
