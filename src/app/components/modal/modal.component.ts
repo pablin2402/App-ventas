@@ -8,15 +8,21 @@ import { NgForm } from '@angular/forms';
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.css']
 })
+
 export class ModalComponent implements OnInit {
 
   constructor(private dataApi: DataApiService) { }
 
-  ngOnInit() {
+  ngOnInit()
+  {
+
   }
 
-  onSaveBook(bookForm: NgForm): void {
+  onSaveBook(bookForm: NgForm): void
+  {
+
    this.dataApi.addBook(bookForm.value);
+
   }
 
 }

@@ -10,7 +10,9 @@ import { GeoService } from 'src/app/geo.service';
   templateUrl: './google-map.component.html',
   styleUrls: ['./google-map.component.css']
 })
-export class GoogleMapComponent implements OnInit {
+
+export class GoogleMapComponent implements OnInit
+{
 
   title = 'My first AGM project';
   lat :number;
@@ -18,16 +20,24 @@ export class GoogleMapComponent implements OnInit {
   zoom:number=16;
   markers:any;
 
-  constructor(private geo: GeoService) { }
+  constructor(private geo: GeoService)
+  {
 
-  ngOnInit() {
+  }
+
+  ngOnInit()
+  {
+
      this.getUserLocation()
      this.geo.hits.subscribe(hits => this.markers = hits)
+
     }
 
-  private getUserLocation() {
+  private getUserLocation()
+  {
     /// locate the user
-    if (navigator.geolocation) {
+    if (navigator.geolocation)
+    {
        navigator.geolocation.getCurrentPosition(position => {
         this.lat = position.coords.latitude;
         this.lng = position.coords.longitude;
@@ -35,7 +45,7 @@ export class GoogleMapComponent implements OnInit {
         this.geo.getLocations(500, [this.lat, this.lng])
       });
     }
-  
-  
-}
+
+  }
+
 }
