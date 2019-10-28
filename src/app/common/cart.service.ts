@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AuthService } from "../services/auth.service";
 import { AngularFireAuth} from '@angular/fire/auth';
 import { Cart } from "../model/cart";
-import { GalletaInterface } from "../model/galleta";
+import { Galleta } from "../model/galleta";
 import { AngularFirestore } from 'angularfire2/firestore';
 
 

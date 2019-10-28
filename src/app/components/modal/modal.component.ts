@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataApiService } from '../../services/data-api.service';
-import { GalletaInterface } from '../../model/galleta';
+import { Galleta } from '../../model/galleta';
 import { NgForm } from '@angular/forms';
 
 @Component({

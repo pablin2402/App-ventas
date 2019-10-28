@@ -12,12 +12,14 @@ import { AuthService } from '../../services/auth.service';
 
 })
 
-export class HeaderComponent  implements OnInit
-{
+export class HeaderComponent  implements OnInit{
   //NOMBRE APP
   public app_name:string ="Tienda";
   //condicion para hacer aparecer etiquetas
   public isLogged = false;
+
+
+
 
  @Output() SideNavigationToggle=new  EventEmitter();
 
@@ -29,13 +31,9 @@ export class HeaderComponent  implements OnInit
   counter=0;
   userStatusColor="warm";
 
-  constructor(private _backendservice: BackendService, private authService: AuthService, private afsAuth: AngularFireAuth)
-  {
+  constructor(private _backendservice: BackendService, private authService: AuthService, private afsAuth: AngularFireAuth) { }
 
-  }
-
-  ngOnInit()
-  {
+  ngOnInit() {
     /*
     this.counter=0;
     this.configData= this._backendservice.getConfig();
@@ -51,39 +49,25 @@ export class HeaderComponent  implements OnInit
     );
 */
       this.getCurrentUser();
-
   }
 
-  onToggleOpenSideNav()
-  {
-
+  onToggleOpenSideNav(){
       this.SideNavigationToggle.emit();
 
   }
 
-  getCurrentUser()
-  {
-
+  getCurrentUser() {
     this.authService.isAuth().subscribe(auth => {
-      if (auth)
-      {
+      if (auth) {
         console.log('user logged');
         this.isLogged = true;
-      }
-      else
-      {
+      } else {
         console.log('NOT user logged');
         this.isLogged = false;
       }
     });
-
   }
-
-  onLogout()
-  {
-
+  onLogout() {
     this.afsAuth.auth.signOut();
-
   }
-
 }

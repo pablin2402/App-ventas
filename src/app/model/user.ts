@@ -1,8 +1,10 @@
-export interface UserInterface{
+export class User
+{
 
-    id?: string;
-    name?: string;
-    email?: string;
-    password?: string;
-    role?: string;
+  uid?: String;
+  name?: String;
+  email?: String;
+  password?: String;
+  role?: String;
+
 }

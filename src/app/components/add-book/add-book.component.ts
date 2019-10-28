@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataApiService } from '../../services/data-api.service';
-import { GalletaInterface } from '../../model/galleta';
+import { Galleta } from '../../model/galleta';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -17,7 +17,7 @@ export class AddBookComponent implements OnInit
 
   }
 
-  private books: GalletaInterface[];
+  private books: Galleta[];
 
   ngOnInit()
   {
@@ -46,7 +46,7 @@ export class AddBookComponent implements OnInit
 
   }
 
-  onPreUpdateBook(book:GalletaInterface)
+  onPreUpdateBook(book:Galleta)
   {
     //this.dataApi.selectedBook=Object.assign({},book);
     console.log('BOOK',book);

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataApiService } from '../../services/data-api.service';
-import { GalletaInterface } from '../../model/galleta';
+import { Galleta } from '../../model/galleta';
 import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
@@ -15,7 +15,7 @@ export class DetailsBookComponent implements OnInit
   constructor(private dataApi: DataApiService,  private route: ActivatedRoute)
   {
   }
-  public book: GalletaInterface = {};
+  public book: Galleta = {};
 
   ngOnInit()
   {

@@ -41,6 +41,7 @@ import { DetailsBookComponent } from './components/details-book/details-book.com
 import { importExpr } from '@angular/compiler/src/output/output_ast';
 import { GoogleMapComponent } from './components/google-map/google-map.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
+import { AuthModule } from './auth/auth.module';
 
 const MaterialComponents = [
   MatButtonModule
@@ -92,7 +93,8 @@ const MaterialComponents = [
     }),
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    AuthModule
   ],
   exports: [
     MatListModule,
