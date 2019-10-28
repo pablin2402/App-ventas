@@ -21,9 +21,15 @@
                         [(ngModel)]="email" required minlength="8">
                       </div>
                        
-                      <div class="alert alert-danger" role="alert" *ngIf="email.touched && !email.valid">
-                        <div *ngIf="email.errors.required">Es necesario tener un correo</div>
-                        <div *ngIf="email.errors.minlength">Email must be at least 8 characters</div>
+                      <div class="alert alert-danger"  *ngIf="email.invalid && (email.dirty || email.touched)">
+                          <div class="form-group">
+                              <div class="container-error-message" *ngIf="email.errors.required">
+                                    Campo requerido.
+                             </div>
+                            </div>
+                            <div class="container-error-message" *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.pattern">
+                                Debe ser un correo
+                            </div>
                       </div>
 
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-registro',
@@ -8,7 +9,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent implements OnInit {
-
+  
+  createFormGroup() {
+    return new FormGroup({
+      email: new FormControl('', [Validators.required, Validators.minLength(5)]),
+      password: new FormControl('', [Validators.required, Validators.minLength(5)]),
+    });
+  }
+  RegistroForm: FormGroup;
   constructor(private router: Router, private authService: AuthService) { }
   ngOnInit() {
   }

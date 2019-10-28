@@ -37,7 +37,7 @@ const routes: Routes=[
 
   {path: 'book/:id', component: DetailsBookComponent },
   
-  {path: 'contacto', component: ContactoComponent},
+  {path: 'contacto', component: ContactoComponent, canActivate:[AuthGuard]},
 
   {path: 'bar', component: NavTabsComponent},
 
