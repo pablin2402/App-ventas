@@ -19,19 +19,3 @@ body{
 }
 
 
-/*----imagen----*/
-#slide{
-margin-top: -5px;
-width: 500px;
-height: 250px;
-display:flex;
-
-}
-#slide2{
-margin-top: -100px;
-width: auto;
-height: auto;
-float: right;
-padding: 150px;
-align-items:right;
-}

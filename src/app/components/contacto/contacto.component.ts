@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators} from '@angular/forms';
-import { DataApiService} from '../../services/data-api.service';
+import { ContactoService} from '../../services/contacto.service';
 
 @Component({
-  selector: 'contactForm',
+  selector: 'app-contacto',
   templateUrl: './contacto.component.html',
   styleUrls: ['./contacto.component.css']
 })
@@ -20,7 +20,7 @@ export class ContactoComponent implements OnInit {
 
   contactForm: FormGroup;
 
-  constructor(private dbData: DataApiService) {
+  constructor(private dbData: ContactoService) {
     this.contactForm = this.createFormGroup();
   }
 

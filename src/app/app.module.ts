@@ -14,6 +14,7 @@ import {MatButtonModule, MatSidenavContent, MatSidenavModule, MatToolbarModule, 
 import { ConfiguracionesComponent } from './components/configuraciones/configuraciones.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule} from '@angular/forms';
 import { AddBookComponent } from './components/add-book/add-book.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import {FlexLayoutModule } from '@angular/flex-layout';
@@ -85,7 +86,7 @@ const MaterialComponents = [
         apiKey: 'AIzaSyDmPQrfklKHKfqwIOuQZ92Q7G0TW0AYZG8'
     }),
     BrowserAnimationsModule,
-
+    ReactiveFormsModule,
     FormsModule
   ],
   exports: [

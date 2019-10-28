@@ -15,7 +15,7 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { DetailsBookComponent } from './components/details-book/details-book.component';
 import{AuthGuard}from'./guards/auth.guard';
-
+import { from } from 'rxjs';
 import { GoogleMapComponent } from './components/google-map/google-map.component';
 import { ContactoComponent} from './components/contacto/contacto.component';
 
