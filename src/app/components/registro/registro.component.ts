@@ -1,8 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter ,OnInit, Input, Output } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
-import { FormControl, FormGroup, Validators} from '@angular/forms';
-//import { SnackService } from "@common/snack.service";
+import { FormControl, FormGroup, Validators, NgForm, FormGroupDirective} from '@angular/forms';
+import { SnackService } from '../../common/snack.service';
+import { ErrorStateMatcher} from "@angular/material";
+//import { AuthService } from "@auth/auth.service";
+import { AngularFirestore } from "angularfire2/firestore";
+
+export class FormErrorStateMatcher implements ErrorStateMatcher
+{
+
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean
+  {
+
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+
+  }
+
+}
+
 
 @Component({
   selector: 'app-registro',
@@ -13,19 +30,31 @@ import { FormControl, FormGroup, Validators} from '@angular/forms';
 export class RegistroComponent implements OnInit
 {
 
+  @Output() onSubmit = new EventEmitter<any>();
+  @Input() btnText: string;
+
   createFormGroup()
   {
 
     return new FormGroup({
-      email: new FormControl('', [Validators.required, Validators.minLength(5)]),
-      password: new FormControl('', [Validators.required, Validators.minLength(5)]),
+
+      email: new FormControl('', [
+        Validators.required, Validators.minLength(5), Validators.email]),
+
+      password: new FormControl('', [
+        Validators.required, Validators.minLength(5)]),
+
     });
 
   }
 
   RegistroForm: FormGroup;
 
-  constructor(private router: Router, private authService: AuthService)//, public snackService: SnackService)
+  matcher = new FormErrorStateMatcher();
+
+  constructor(
+    private router: Router,
+    private authService: AuthService)//, public snackService: SnackService)
   {
 
   }
@@ -38,29 +67,55 @@ export class RegistroComponent implements OnInit
   public email: string = '';
   public password: string = '';
 
+  submit(email, password)//envia datos al registro
+  {
+
+    this.onSubmit.emit({email,password});
+
+  }
+
   onAddUser()
   {
 
     this.authService.registerUser(this.email, this.password)
       .then((res) => {
-        //const userJson = res.toJSON();
-
-         //  this.snackService.launch('Registrado correctamente, Iniciando sesion.', 'Alta usuario', 4000);
-
-         //const data ={
-          // id: userJson.id,
-          // name: userJson.name,
-      //     email: userJson.email,
-        //   password: userJson.password,
-    //       role: 'Cliente'
-  //       };
-    //this.afs.collection('users').doc(userJson.id).set(data)
-           this.router.navigate(['/home'])
+         this.router.navigate(['/home'])
 
          }).catch(err => console.log('err', err.message));
 
          }
+/*
+signUp(user)
+{
+  this.auth.signUp(user.email.value, user.password.value).then((value) =>{
+    const userJson = value.toJSON();
+   this.snackService.launch('Registrado correctamente, Iniciando sesion.', 'Alta usuario', 4000);
+   const data ={
+     uid: userJson.id,
+     name: user.email.value,
+     email: user.email.value,
+     password: userJson.password,
+     role: 'Cliente'
+   };
+   this.afs.collection('usuarios').doc(userJson.uid).set(data)
+   .then(()=>{
+     this.auth.emailAndPassword(user.email, user.password).then(()=>{
+       this.router.navigate(['/home']);
+     })
+   })
+   .catch(error => {
+    this.appService.stopLoader();
+     this.snackService.launch("Error " +error.message, "Alta Usuario", 4000);
 
+   })
+})
+  .catch(err => {
+    this.appService.stopLoader();
+    this.snackService.launch("Error " +err.message, "Alta Usuario", 4000);
+  })
+}
+
+*/
   onLoginGoogle()
   {
     //this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());

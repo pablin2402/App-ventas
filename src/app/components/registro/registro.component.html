@@ -1,7 +1,7 @@
 <section id="register" class="mb-5 mt-5">
         <div class="container">
           <div class="row">
-      
+
             <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
               <div class="card_register">
 
@@ -9,18 +9,21 @@
                   <div class="card-body text-center">
                     <form #formRegister="ngForm" (ngSubmit)="onAddUser()">
                       <!--FUENTE DEL REGISTRO-->
-                      <h1 class="h3 mb-3 font-weight-normal">Registro</h1>
-                      
+                      <h1 class="h3 mb-3 font-weight-normal" >Registro</h1>
+
                       <div class="alert alert-danger" role="alert" *ngIf="isError">
                         {{msgError}}
                       </div>
 
-                       
+
                       <div class="form-group">
-                        <input type="email" name="email" class="form-control" placeholder="Email" 
-                        [(ngModel)]="email" required minlength="8">
+                        <input
+                        type="email" name="email" class="form-control"
+                        placeholder="Email" [(ngModel)]="email"
+                        required minlength="8"
+                        >
                       </div>
-                       
+
                       <div class="alert alert-danger"  *ngIf="email.invalid && (email.dirty || email.touched)">
                           <div class="form-group">
                               <div class="container-error-message" *ngIf="email.errors.required">
@@ -34,25 +37,34 @@
 
 
                       <div class="form-group">
-                        <input type="password" name="password" class="form-control" aria-describedby="passwordHelpBlock" placeholder="Password" [(ngModel)]="password" required minlength="5"
-                          maxlength="10">
+
+                        <input
+                        type="password" name="password" class="form-control"
+                        aria-describedby="passwordHelpBlock" placeholder="Password"
+                        [(ngModel)]="password" required minlength="5"
+                          maxlength="10"
+                        >
+
                           <small id="passwordHelpBlock" class="form-text text-muted">
                               La contraseña debe tener mínimo 8 caracteres de longitud.
                             </small>
                       </div>
-                      
+
                       <div class="alert alert-danger" role="alert" *ngIf="password.touched && !password.valid">
                         <div *ngIf="password.errors.required">Password is required</div>
                         <div *ngIf="password.errors.minlength">Password must be at least 5 characters</div>
                       </div>
-                      
-                     
-                      <button type="submit" class="btn btn-lg btn-primary btn-block">Registro</button>
+
+
+                      <button type="submit"
+                        class="btn btn-lg btn-primary btn-block" mat-raised-button color="primary">
+                        Registro
+                      </button>
                       <div class="form-group">
                          <a routerLink="/login" class="form-control login-user">¿Tienes una cuenta? Registrate</a>
                       </div>
                       <div class="form-group">
-                       
+
                         <button class="btn btn-block btn-social btn-facebook" (click)="onLoginFacebook()">
                           <span class="fa fa-facebook"></span>
                           FACEBOOK
@@ -65,7 +77,7 @@
 
                       </div>
                     </form>
-      
+
                   </div>
                 </div>
               </div>
@@ -73,4 +85,3 @@
           </div>
         </div>
       </section>
-

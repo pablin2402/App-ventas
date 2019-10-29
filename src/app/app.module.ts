@@ -25,6 +25,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AgmCoreModule } from '@agm/core';
 import { SharedModule } from "./shared/shared.module";
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { from } from 'rxjs';
 //FIREBASE CONFIGURACION
@@ -79,12 +80,12 @@ const MaterialComponents = [
     HttpClientModule,
     MaterialComponents,
     MatSidenavModule,
-    MatToolbarModule
-    ,
+    MatToolbarModule,
     MatBadgeModule,
     MatButtonModule,
     MatListModule,
     MatTabsModule,
+    MatSnackBarModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     FlexLayoutModule,
@@ -103,6 +104,7 @@ const MaterialComponents = [
     MatToolbarModule,
     MatSidenavModule,
     MatTabsModule,
+    MatSnackBarModule,
     MaterialComponents
   ],
   providers: [AngularFireAuth, AngularFirestore],
