@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+//import { AppService, ProductsService, CartService, SnackService } from '../common';
 import { AppService } from '../common/app.service';
+
 
 import{
   MatButtonModule,
@@ -59,5 +61,5 @@ import{
     MatProgressSpinnerModule
   ],
   providers: [AppService]
-})
+  })
 export class SharedModule { }

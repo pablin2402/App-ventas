@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators, NgForm, FormGroupDirective} from '@angular/forms';
 import { SnackService } from '../../common/snack.service';
 import { ErrorStateMatcher} from "@angular/material";
-//import { AuthService } from "@auth/auth.service";
 import { AngularFirestore } from "angularfire2/firestore";
 
 export class FormErrorStateMatcher implements ErrorStateMatcher

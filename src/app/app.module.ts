@@ -43,6 +43,7 @@ import { importExpr } from '@angular/compiler/src/output/output_ast';
 import { GoogleMapComponent } from './components/google-map/google-map.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { AuthModule } from './auth/auth.module';
+import { AdminModule } from './admin/admin.module';
 
 const MaterialComponents = [
   MatButtonModule
@@ -95,7 +96,8 @@ const MaterialComponents = [
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
-    AuthModule
+    AuthModule,
+    AdminModule
   ],
   exports: [
     MatListModule,

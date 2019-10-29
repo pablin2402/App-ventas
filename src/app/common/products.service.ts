@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from "angularfire2/firestore";
 import * as faker from 'faker';
-import { Galleta } from "../models/galleta";
+import { Galleta } from "../model/galleta";
 
 
-type productCollection = AngularFirestoreCollection<Galleta[]>;
-type productDocument = AngularFirestoreDocument<Galleta>;
+type galletaCollection = AngularFirestoreCollection<Galleta[]>;
+type galletaDocument = AngularFirestoreDocument<Galleta>;
 
 @Injectable({
   providedIn: 'root'
@@ -19,12 +19,12 @@ export class ProductsService {
 
   }
 
-  products(): productsCollection
+  galletas(): galletaCollection
   {
     return this.afs.collection<Galleta[]>('galletas');
   }
 
-  product(id: string): productDocument
+  galleta(id: string): galletaDocument
   {
     return this.afs.doc<Galleta>(`galletas/${id}`);
   }
@@ -42,7 +42,7 @@ export class ProductsService {
 
   getProductImages(galletaId: string)
   {
-    return (this.afs.doc<Galleta>(`galletas/${galletaId}`).collection('uploads');
+    return (this.afs.doc<Galleta>(`galletas/${galletaId}`).collection('uploads'));
     //acceder a la informacion de uploads, acceder a storage de firestore
   }
 }
