@@ -17,7 +17,7 @@ export class ProfileComponent implements OnInit
   }
 
   user: User = {
-    name: '',
+    displayName: '',
     email: '',
   };
 
@@ -29,7 +29,7 @@ export class ProfileComponent implements OnInit
     this.authService.isAuth().subscribe(user => {
       if (user)
       {
-        this.user.name = user.displayName;
+        this.user.displayName = user.displayName;
         this.user.email=user.email;
         this.providerId=user.providerData[0].providerId;
 

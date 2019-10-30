@@ -1,7 +1,7 @@
 import { Component, OnInit , ViewChild, Inject} from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { AngularFirestore } from 'angularfire2/firestore';
-import { AuthService } from '../../auth/auth.service';
+import { AuthService } from '../../services/auth.service';
 import { SnackService } from '../../common/snack.service';
 import { Galleta } from "../../model/galleta";
 import { ProductsService } from '../../common/products.service';
@@ -9,7 +9,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA,  NO_ERRORS_SCHEMA} from '@angular/cor
 import { FormsModule} from '@angular/forms';
 import { Product } from "../../model/product";
 import { Upload } from "../../model/upload";
-//import { UploadService } from '../../admin/upload.service';
+import { UploadService } from '../../admin/upload.service';
 
 @Component({
   selector: 'app-products-dialog',
@@ -28,8 +28,7 @@ export class ProductsDialogComponent implements OnInit {
       private snackService: SnackService,
       public auth: AuthService,
       private productService: ProductsService,
-    /*  private uploadService: UploadService*/
-
+      private uploadService: UploadService
   )
   {
   //  console.log(data);
@@ -92,8 +91,7 @@ export class ProductsDialogComponent implements OnInit {
   }
 
   removeUpload(upload: Upload) {
-    /*
-    //////////////////////////////////////////////////
+
      this.uploadService.removeFile(upload.id).then(() => {
         this.afs.doc(`products/${this.data.id}/uploads/${upload.id}`).delete().then(() => {
           this.snackService.launch("Adjunto eliminado", "Tienda", 4000);
@@ -102,7 +100,7 @@ export class ProductsDialogComponent implements OnInit {
             this.snackService.launch("Error: " + error.message, "Tienda", 4000);
           })
       })
-      */
+
     }
 
 

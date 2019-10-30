@@ -8,7 +8,7 @@ import { AppService } from "./common/app.service";
 })
 
 export class AppComponent {
-  title = 'proyecto';
+  title = 'COMPRA Y VENTA';
 
   constructor(
     public appService: AppService)

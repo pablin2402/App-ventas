@@ -11,7 +11,7 @@ export const environment = {
     fblink:'https://www.facebook.com/'
 
   },
-  
+
   firebaseConfig: {
 
     apiKey: "AIzaSyAzVT1fQaGuijaxX6E2tciN0OmXiRhJm-8",
@@ -24,7 +24,16 @@ export const environment = {
     measurementId: "G-Y3GHYT9Q41"
   },
 
-  googleMapsKey:'AIzaSyDmPQrfklKHKfqwIOuQZ92Q7G0TW0AYZG8'
+/*    firebaseConfig: {
+      apiKey: "AIzaSyBLFAfssU5UVo6msU4g8GSIqA8psQ4XXu8",
+      authDomain: "tienda-ef47b.firebaseapp.com",
+      databaseURL: "https://tienda-ef47b.firebaseio.com",
+      projectId: "tienda-ef47b",
+      storageBucket: "tienda-ef47b.appspot.com",
+      messagingSenderId: "896854163201",
+      appId: "1:896854163201:web:90af6c5b859f9e488a6500",
+      measurementId: "G-XPM8E3V8F4"
+    },
+*/
+    googleMapsKey:'AIzaSyDmPQrfklKHKfqwIOuQZ92Q7G0TW0AYZG8'
 };
-
-
