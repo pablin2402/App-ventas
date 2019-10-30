@@ -16,6 +16,7 @@ import { of } from 'rxjs';
 export class AuthService {
 
   User: Observable<User>;
+
   constructor(
     public afAuth: AngularFireAuth,
     private afs: AngularFirestore,
@@ -36,15 +37,27 @@ export class AuthService {
     })
 
   }
-  private oAuthLogin(provider)
-  {
 
-      return (this.afAuth.auth.signInWithPopup(provider)
-       .then(credentials => {
-         this.router.navigate(['/shop']);
-       }))
-
-  }
+    private oAuthLogin(provider) {
+      return this.afAuth.auth.signInWithPopup(provider).then(credentials => {
+        const user = credentials.user;
+        this.afs.collection<User>('users', ref => ref.where('email', '==', user.email)).valueChanges().subscribe(data => {
+          if(!data.length) {
+            const newUser = {
+              uid: user.uid,
+              email: user.email,
+            /*  name: user.name,*/
+              role: 'Cliente'
+            }
+            this.afs.collection('users').doc(user.uid).set(newUser).then(() => {
+              this.router.navigate(['/shop']);
+              return;
+            })
+          }
+          this.router.navigate(['/shop']);
+        })
+      })
+    }
 
   googleLogin()
   {

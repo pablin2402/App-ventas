@@ -3,6 +3,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 //import { AppService, ProductsService, CartService, SnackService } from '../common';
 import { AppService } from '../common/app.service';
+import { SnackService } from '../common/snack.service';
+import { ProductsService } from '../common/products.service';
+import { CartService } from '../common/cart.service';
+//import { OrdersService } from '../common/orders.service';
 
 
 import{
@@ -60,6 +64,6 @@ import{
     MatTabsModule,
     MatProgressSpinnerModule
   ],
-  providers: [AppService]
+  providers: [AppService, SnackService, CartService, ProductsService]
   })
 export class SharedModule { }

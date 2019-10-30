@@ -26,7 +26,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AgmCoreModule } from '@agm/core';
 import { SharedModule } from "./shared/shared.module";
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-
+import { ShopModule } from './shop/shop.module';
 import { from } from 'rxjs';
 //FIREBASE CONFIGURACION
 export const firebaseConfig =environment.firebaseConfig;
@@ -44,6 +44,7 @@ import { GoogleMapComponent } from './components/google-map/google-map.component
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { AuthModule } from './auth/auth.module';
 import { AdminModule } from './admin/admin.module';
+//import { AdminComponent } from './admin/admin/admin.component';
 
 const MaterialComponents = [
   MatButtonModule
@@ -70,7 +71,7 @@ const MaterialComponents = [
     AboutusComponent,
     ContactoComponent,
     CarritoComponent
-
+  //  AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -97,7 +98,8 @@ const MaterialComponents = [
     ReactiveFormsModule,
     FormsModule,
     AuthModule,
-    AdminModule
+    AdminModule,
+    ShopModule
   ],
   exports: [
     MatListModule,

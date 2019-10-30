@@ -1,7 +1,8 @@
-export class Cart {
-  id_cart?: string;
-  id: string; //para el usuario
-  galletas?: Array<any> =[];
+export class Cart
+{
+  id?: string;
+  uid: string; //para el usuario
+  products?: Array<any> =[];
   totalProducts: number = 0;
 
   constructor()

@@ -4,6 +4,8 @@ import { AuthService } from './auth.service';
 import { AuthRoutingModule } from './auth-routing.module';
 import { SharedModule } from "../shared/shared.module";
 import { AngularFireAuthModule } from "angularfire2/auth";
+//import { FormComponent } from './form/form.component';
+import { AuthGuard } from '../guards/auth.guard';
 
 
 @NgModule({
@@ -14,7 +16,7 @@ import { AngularFireAuthModule } from "angularfire2/auth";
     AngularFireAuthModule,
     SharedModule
   ],
-  providers: [AuthService]
+  providers: [AuthService, AuthGuard]
 })
 
 export class AuthModule { }

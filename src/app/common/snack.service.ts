@@ -6,8 +6,9 @@ import {MAT_SNACK_BAR_DATA} from '@angular/material/snack-bar';
 
 export class SnackService
 {
+  private snackBarOptions: MatSnackBarConfig = new MatSnackBarConfig;
 
-private snackBarOptions: MatSnackBarConfig = new MatSnackBarConfig();
+//private snackBarOptions: MatSnackBarConfig = new MatSnackBarConfig();
 
   constructor(
     private snackBar: MatSnackBar)
@@ -17,12 +18,11 @@ private snackBarOptions: MatSnackBarConfig = new MatSnackBarConfig();
 
   launch(message: string, action: string, duration: number)
   {
-
+    
     this.snackBarOptions.duration = duration;
     this.snackBar.open(message, action, this.snackBarOptions);
 
-   }
-
+  }
 // public open(message, action = 'success', duration = 50000) {
 //    this.zone.run(() => {
 //        this.snackBar.open(message, action, { duration });
