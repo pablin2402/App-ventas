@@ -12,10 +12,10 @@ export class CompraComponent implements OnInit {
 
   createFormGroup() {
     return new FormGroup({
-      nombre: new FormControl('', [Validators.required, Validators.minLength(5)]),
-      cel: new FormControl('', [Validators.required, Validators.minLength(5)]),
+      nombre: new FormControl('', [Validators.required]),
+      cel: new FormControl('', [Validators.required, Validators.minLength(7)]),
       direccion: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(100)]),
-      cantidad: new FormControl('', [Validators.required, Validators.minLength(5)]),
+      cantidad: new FormControl('', [Validators.required]),
     
     });
   }

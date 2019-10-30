@@ -1,8 +1,8 @@
 export interface DatoscompraI{
     nombre?: string;
-    cel?: Int16Array;
+    cel?: number;
     direccion?: string;
-    cantidad?: Int16Array;
+    cantidad?: number;
     producto?: string;
-    preciototal?: string;
+    preciototal?: number;
 }
