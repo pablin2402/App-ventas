@@ -87,7 +87,7 @@ const MaterialComponents = [
     AngularFireDatabaseModule,
     FlexLayoutModule,
     AgmCoreModule.forRoot({
-        apiKey: 'API'
+        apiKey: 'API KEY'
     }),
     BrowserAnimationsModule,
     ReactiveFormsModule,
