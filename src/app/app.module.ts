@@ -49,8 +49,6 @@ import { environment } from "../environments/environment";
 
 import { importExpr } from '@angular/compiler/src/output/output_ast';
 
-
-
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuth } from '@angular/fire/auth';
@@ -58,6 +56,9 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFirestore }from '@angular/fire/firestore';
 import { AngularFirestoreModule } from "angularfire2/firestore";
 
+
+import { ListcookiesComponent } from './components/listcookies/listcookies.component';
+import { DetailsCookieComponent } from './components/details-cookie/details-cookie.component';
 
 const MaterialComponents = [
   MatButtonModule
@@ -67,9 +68,11 @@ const MaterialComponents = [
 @NgModule({
   declarations: [
     AppComponent,
+    ListcookiesComponent,
     ProfileComponent,
     HeaderComponent,
     UserComponent,
+    DetailsCookieComponent,
     FooterComponent,
     ConfiguracionesComponent,
     AddBookComponent,
@@ -110,7 +113,7 @@ const MaterialComponents = [
     AngularFireDatabaseModule,
     FlexLayoutModule,
     AgmCoreModule.forRoot({
-        apiKey: 'API'
+        apiKey: 'API KEY'
     }),
     BrowserAnimationsModule,
     ReactiveFormsModule,
