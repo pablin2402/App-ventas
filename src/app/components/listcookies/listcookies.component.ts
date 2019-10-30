@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CookieService} from '../../services/cookie.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listcookies',
@@ -8,7 +9,7 @@ import { CookieService} from '../../services/cookie.service';
 })
 export class ListcookiesComponent implements OnInit {
 
-  constructor(private dataApis: CookieService) { }
+  constructor(private dataApis: CookieService, public router: Router) { }
 
   public books =[];
   public book='';
@@ -19,6 +20,8 @@ export class ListcookiesComponent implements OnInit {
     })
   }
 
- 
+  irformcomprar():void{
+    this.router.navigate(['/comprar']);
+  }
 
 }

@@ -1,5 +1,5 @@
 
-export interface GalletaInterface{
+export class Galleta{
 
     titulo?: string;
     idioma?: string;
