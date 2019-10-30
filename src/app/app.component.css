@@ -6,3 +6,7 @@ mat-sidenav{
 mat-sidenav{
     width: 250px;
 }
+mat-spinner
+{
+  margin: 20% auto;
+}

@@ -8,17 +8,23 @@ import { Router } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
 export class HomeComponent implements OnInit {
+
 
   constructor(private dataApi: DataApiService, private router: Router) { }
 
   public books =[];
   public book='';
-  ngOnInit() {
+
+  ngOnInit()
+  {
+
     this.dataApi.getAllBooks().subscribe(books =>{
       console.log('BOOKS',books);
       this.books=books;
     })
+
   }
 
   irformcomprar():void{

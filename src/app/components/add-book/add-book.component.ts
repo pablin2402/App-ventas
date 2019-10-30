@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataApiService } from '../../services/data-api.service';
-import { GalletaInterface } from '../../model/galleta';
+import { Galleta } from '../../model/galleta';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -8,29 +8,46 @@ import { NgForm } from '@angular/forms';
   templateUrl: './add-book.component.html',
   styleUrls: ['./add-book.component.css']
 })
-export class AddBookComponent implements OnInit {
 
-  constructor(private dataApi: DataApiService) { }
-  private books: GalletaInterface[];
+export class AddBookComponent implements OnInit
+{
 
-  ngOnInit() {
-    this.getListBooks();
+  constructor(private dataApi: DataApiService)
+  {
+
   }
 
-  getListBooks() {
+  private books: Galleta[];
+
+  ngOnInit()
+  {
+
+    this.getListBooks();
+
+  }
+
+  getListBooks()
+  {
+
     this.dataApi.getAllBooks()
       .subscribe(books => {
         this.books = books;
       });
+
   }
-  onDeleteBook(idBook: string): void {
+
+  onDeleteBook(idBook: string): void
+  {
+
     const confirmacion = confirm('¿Estás seguro que deseas eliminar el producto?');
     if (confirmacion) {
       this.dataApi.deleteBook(idBook);
     }
+
   }
 
-  onPreUpdateBook(book:GalletaInterface){
+  onPreUpdateBook(book:Galleta)
+  {
     //this.dataApi.selectedBook=Object.assign({},book);
     console.log('BOOK',book);
   }

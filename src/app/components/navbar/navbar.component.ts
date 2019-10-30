@@ -5,16 +5,26 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
+
 export class NavbarComponent implements OnInit {
 
   @Output() closeSideNavigation = new EventEmitter();
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor()
+  {
+    
   }
 
-  onToggleClose(){
+  ngOnInit()
+  {
+
+  }
+
+  onToggleClose()
+  {
+
     this.closeSideNavigation.emit();
+
   }
+
 }

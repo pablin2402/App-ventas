@@ -1,26 +1,33 @@
 <div class="navtabs-container">
    <nav mat-tab-nav-bar  mat-align-tabs="center" fxFlex fxLayout fxLayoutAlign="center center" style="background-color:#bde5ce;">
-    
+
     <a mat-tab-link routerLink="/"
     routerLinkActive #home="routerLinkActive"
-    [active]="home.isActive"> 
+    [active]="home.isActive">
     Home
     </a>
-    <a mat-tab-link routerLink="/login"
+
+    <a mat-tab-link routerLink="/addbook"
     routerLinkActive #configuraciones="routerLinkActive"
-    [active]="configuraciones.isActive"> 
-    Configuraciones
+    [active]="configuraciones.isActive">
+    Listar Productos
     </a>
     <a mat-tab-link routerLink="/configuraciones"
     routerLinkActive #configuraciones="routerLinkActive"
-    [active]="configuraciones.isActive"> 
+    [active]="configuraciones.isActive">
     Configuraciones
+    </a>
+
+    <a mat-tab-link routerLink="/registro"
+    routerLinkActive #configuraciones="routerLinkActive"
+    [active]="configuraciones.isActive">
+    Registro
     </a>
     <a mat-tab-link routerLink="/contacto"
     routerLinkActive #contacto="routerLinkActive"
-    [active]="contacto.isActive"> 
+    [active]="contacto.isActive">
     Contacto
     </a>
   </nav>
- 
+
 </div>

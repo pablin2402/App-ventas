@@ -2,15 +2,29 @@ import {Injectable} from '@angular/core'
 import { environment } from 'src/environments/environment'
 
 import { Observable } from 'rxjs';
+
 @Injectable({
     providedIn: 'root'
 })
-export class BackendService{
-constructor(){ }
-getConfig(){
+
+export class BackendService
+{
+
+  constructor()
+  {
+
+  }
+
+  getConfig()
+  {
+
     return environment.social;
-}
-getCartTotal(){
+
+  }
+
+  getCartTotal()
+  {
+
     let fakeresponse="10";
     return Observable.create(
         observer => {
@@ -20,9 +34,11 @@ getCartTotal(){
         }
     )
 
-}
+  }
 
-getUserStatus(){
+  getUserStatus()
+  {
+
     let fakeresponse= true;
     return Observable.create(
         observer => {
@@ -30,6 +46,8 @@ getUserStatus(){
                 observer.next(fakeresponse)
             },2000)
         }
-    )
-}
+      )
+
+  }
+
 }

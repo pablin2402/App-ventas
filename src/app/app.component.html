@@ -1,4 +1,5 @@
 <mat-sidenav-container>
+  <mat-spinner *ngIf="appService.loading$ | async"></mat-spinner>
     <mat-sidenav #sidenav>
         <app-navbar (closeSideNavigation)="sidenav.close()">
 
@@ -11,10 +12,8 @@
         </app-header>
         <app-nav-tabs></app-nav-tabs>
         <main>
-                <router-outlet> </router-outlet>         
+                <router-outlet> </router-outlet>
         </main>
     </mat-sidenav-content>
 
 </mat-sidenav-container>
-
-

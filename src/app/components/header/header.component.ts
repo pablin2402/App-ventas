@@ -3,16 +3,17 @@ import { fallIn, moveIn} from 'src/app/router.animation';
 import { BackendService } from '../services/backend.service';
 import{ AngularFireAuth } from '@angular/fire/auth';
 import { AuthService } from '../../services/auth.service';
+import { CartService } from '../../common/cart.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
- 
-  
+
+
 })
 
-export class HeaderComponent  implements OnInit{  
+export class HeaderComponent  implements OnInit{
   //NOMBRE APP
   public app_name:string ="Tienda";
   //condicion para hacer aparecer etiquetas
@@ -23,17 +24,50 @@ export class HeaderComponent  implements OnInit{
 
  @Output() SideNavigationToggle=new  EventEmitter();
 
-  @Input() pageTitle: string; 
-  @Input() iconTitle: string; 
+  @Input() pageTitle: string;
+  @Input() iconTitle: string;
   @Input() helpTitle: string;
-  
+
   configData;
   counter=0;
   userStatusColor="warm";
 
-  constructor(private _backendservice: BackendService, private authService: AuthService, private afsAuth: AngularFireAuth) { }
+  cart: any;
+  constructor(
+    public auth: AuthService,
+    private _backendservice: BackendService,
+    private authService: AuthService,
+    private afsAuth: AngularFireAuth,
+    public cartService: CartService
+  )
+  {
 
-  ngOnInit() {
+  }
+
+  ngOnInit()
+  {
+    this.auth.User.subscribe(data =>{
+      if(data)
+      {
+        const cartRef = this.cartService.myCartRef(data.uid).get();
+        cartRef.then((cart) =>{
+          if(cart.exists)
+          {
+            this.cartService.myCart(data.uid).subscribe(myCart => {
+              this.cart = myCart.payload.data();
+            })
+          }
+          else
+          {
+            this.cartService.createCart(data.uid);
+            this.cartService.myCart(data.uid).subscribe(myCart => {
+              this.cart = myCart.payload.data();
+            })
+          }
+        })
+      }
+    })
+
     /*
     this.counter=0;
     this.configData= this._backendservice.getConfig();
@@ -71,5 +105,3 @@ export class HeaderComponent  implements OnInit{
     this.afsAuth.auth.signOut();
   }
 }
-
-

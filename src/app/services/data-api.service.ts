@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
-import { GalletaInterface } from '../model/galleta';
+import { Galleta } from '../model/galleta';
 import { Observable } from 'rxjs/internal/Observable';
 import { map } from 'rxjs/operators';
 
@@ -9,25 +9,25 @@ import { map } from 'rxjs/operators';
 })
 export class DataApiService {
 
-  
-  constructor(private afs: AngularFirestore) { 
-    this.booksCollection =afs.collection<GalletaInterface>('books');
+
+  constructor(private afs: AngularFirestore) {
+    this.booksCollection =afs.collection<Galleta>('books');
     this.books=this.booksCollection.valueChanges();
   }
-  
-  private booksCollection: AngularFirestoreCollection<GalletaInterface>;
-  private books: Observable<GalletaInterface[]>;
-  private bookDoc: AngularFirestoreDocument<GalletaInterface>;
-  private book: Observable<GalletaInterface>;
-  public selectedBook: GalletaInterface = {
-    
+
+  private booksCollection: AngularFirestoreCollection<Galleta>;
+  private books: Observable<Galleta[]>;
+  private bookDoc: AngularFirestoreDocument<Galleta>;
+  private book: Observable<Galleta>;
+  public selectedBook: Galleta = {
+
   };
- 
+
   getAllBooks() {
     return this.books= this.booksCollection.snapshotChanges()
     .pipe(map(changes => {
       return changes.map(action => {
-        const data = action.payload.doc.data() as GalletaInterface;
+        const data = action.payload.doc.data() as Galleta;
         data.id = action.payload.doc.id;
         return data;
       });
@@ -35,29 +35,28 @@ export class DataApiService {
   }
 
   getOneBook(idBook: string) {
-    this.bookDoc = this.afs.doc<GalletaInterface>(`books/${idBook}`);
+    this.bookDoc = this.afs.doc<Galleta>(`books/${idBook}`);
     return this.book = this.bookDoc.snapshotChanges().pipe(map(action => {
       if (action.payload.exists === false) {
         return null;
       } else {
-        const data = action.payload.data() as GalletaInterface;
+        const data = action.payload.data() as Galleta;
         data.id = action.payload.id;
         return data;
       }
     }));
   }
-  addBook(book: GalletaInterface): void {
+  addBook(book: Galleta): void {
     this.booksCollection.add(book);
   }
-  updateBook(book: GalletaInterface): void {
+  updateBook(book: Galleta): void {
     let idBook = book.id;
-    this.bookDoc = this.afs.doc<GalletaInterface>(`books/${idBook}`);
+    this.bookDoc = this.afs.doc<Galleta>(`books/${idBook}`);
     this.bookDoc.update(book);
   }
   deleteBook(idBook: string): void {
-    this.bookDoc = this.afs.doc<GalletaInterface>(`books/${idBook}`);
+    this.bookDoc = this.afs.doc<Galleta>(`books/${idBook}`);
     this.bookDoc.delete();
   }
-  
-}
 
+}
