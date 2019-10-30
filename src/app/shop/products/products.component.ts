@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../auth/auth.service';
+import { AuthService } from '../../services/auth.service';
 import { Observable, from } from 'rxjs';
 import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/observable/combineLatest';
@@ -35,7 +35,7 @@ public products: any;
 
   ngOnInit()
   {
-    
+
     this.products = this.productService.products().snapshotChanges().map(productSnaps => {
         return productSnaps.map(product => {
           const productData = product.payload.doc.data();

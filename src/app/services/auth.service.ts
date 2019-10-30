@@ -14,6 +14,7 @@ import { of } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
 
   User: Observable<User>;
@@ -24,13 +25,16 @@ export class AuthService {
     private router: Router
   )
   {
+
     this.User = this.afsAuth.authState.switchMap(user => {
-          if( user ) {
+          if( user )
+          {
             return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
-          } else {
+          } else
+          {
             return Observable.of(null);
           }
-        })
+    })
 
   }
 
@@ -71,12 +75,14 @@ export class AuthService {
       return this.afsAuth.auth.signInWithPopup(provider).then(credentials => {
         const user = credentials.user;
         this.afs.collection<User>('users', ref => ref.where('email', '==', user.email)).valueChanges().subscribe(data => {
-          if(!data.length) {
+          if(!data.length)
+          {
             const newUser = {
               uid: user.uid,
               email: user.email,
-            /*  name: user.name,*/
-              role: 'Cliente'
+              displayName: user.displayName,
+              /*psw : user.psw,*/
+              role: 'cliente'
             }
             this.afs.collection('users').doc(user.uid).set(newUser).then(() => {
               this.router.navigate(['/homme']);
@@ -88,23 +94,35 @@ export class AuthService {
       })
     }
 
-    googleLogin() {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    return this.oAuthLogin(provider);
-  }
+    googleLogin()
+    {
 
-  emailAndPassword(email, password) {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      return this.oAuthLogin(provider);
+
+    }
+
+  emailAndPassword(email, password)
+  {
+
     return this.afsAuth.auth.signInWithEmailAndPassword(email.value, password.value);
+
   }
 
-  signUp(email, password) {
+  signUp(email, password)
+  {
+
     return this.afsAuth.auth.createUserWithEmailAndPassword(email, password);
+
   }
 
-  signOut() {
+  signOut()
+  {
+
     this.afsAuth.auth.signOut().then(() => {
       this.router.navigate(['/login']);
     })
+
   }
   //////////
 

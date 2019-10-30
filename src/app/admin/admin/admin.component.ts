@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../auth/auth.service';
+import { AuthService } from '../../services/auth.service';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 

@@ -1,10 +1,10 @@
 export class User
 {
 
-  uid?: String;
-  name?: String;
-  email?: String;
-  password?: String;
-  role?: String;
+  uid?: string;
+  email?: string;
+  displayName?: string;
+/*  psw?: string;*/
+  role?: string;
 
 }
