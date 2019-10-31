@@ -46,15 +46,19 @@ export class DataApiService {
       }
     }));
   }
-  addBook(book: GalletaInterface): void {
+  addBook(book: GalletaInterface): void 
+  {
     this.booksCollection.add(book);
   }
-  updateBook(book: GalletaInterface): void {
+  updateBook(book: GalletaInterface): void 
+  {
     let idBook = book.id;
     this.bookDoc = this.afs.doc<GalletaInterface>(`books/${idBook}`);
     this.bookDoc.update(book);
   }
-  deleteBook(idBook: string): void {
+  
+  deleteBook(idBook: string): void
+  {
     this.bookDoc = this.afs.doc<GalletaInterface>(`books/${idBook}`);
     this.bookDoc.delete();
   }

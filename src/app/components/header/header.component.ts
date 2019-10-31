@@ -14,7 +14,7 @@ import { AuthService } from '../../services/auth.service';
 
 export class HeaderComponent  implements OnInit{  
   //NOMBRE APP
-  public app_name:string ="Tienda";
+  public app_name:string ="Administrador";
   //condicion para hacer aparecer etiquetas
   public isLogged = false;
 

@@ -41,6 +41,11 @@ import { GoogleMapComponent } from './components/google-map/google-map.component
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { ListcookiesComponent } from './components/listcookies/listcookies.component';
 import { DetailsCookieComponent } from './components/details-cookie/details-cookie.component';
+import { AddcookieComponent } from './components/addcookie/addcookie.component';
+import { AddworkersComponent } from './workers/addworkers/addworkers.component';
+import { AdddisComponent } from './distribuidores/adddis/adddis.component';
+import { ListworkersComponent } from './workers/listworkers/listworkers.component';
+import { ListdistribuidoresComponent } from './distribuidores/listdistribuidores/listdistribuidores.component';
 
 const MaterialComponents = [
   MatButtonModule
@@ -53,7 +58,9 @@ const MaterialComponents = [
     ListcookiesComponent,
     ProfileComponent,
     HeaderComponent,
+    AddworkersComponent,
     UserComponent,
+    AddcookieComponent,
     DetailsCookieComponent,
     FooterComponent,
     ConfiguracionesComponent,
@@ -65,6 +72,9 @@ const MaterialComponents = [
     DetailsBookComponent,
     RegistroComponent,
     LoginComponent,
+    AdddisComponent,
+    ListworkersComponent,
+    ListdistribuidoresComponent,
     NavTabsComponent,
     AboutusComponent,
     ContactoComponent
@@ -87,7 +97,7 @@ const MaterialComponents = [
     AngularFireDatabaseModule,
     FlexLayoutModule,
     AgmCoreModule.forRoot({
-        apiKey: 'API'
+        apiKey: 'AIzaSyDmPQrfklKHKfqwIOuQZ92Q7G0TW0AYZG8'
     }),
     BrowserAnimationsModule,
     ReactiveFormsModule,

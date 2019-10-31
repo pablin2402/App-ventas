@@ -1,0 +1,108 @@
+<section id="register" class="mb-5 mt-5">
+
+    <div class="container">
+        <div class="row">
+    
+          <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+            <div class="card_register">
+    
+              <div class="card">
+                  <div class="card-body text-center">
+    
+                  <h1 class="h3 mb-3 font-weight-normal"> Registrar Distribuidores</h1>
+                  
+                  <form [formGroup]="contacForm" (ngSubmit)="onSaveForm()">
+                  
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Nombre</label>
+   
+                      <input type="text" formControlName="nombre" placeholder="Ingrese su nombre" class="form-control">
+                         <div class="alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+                            <div class="container-error-message" *ngIf="nombre.errors.required">
+                              Nombre es obligatorio
+                            </div>
+                        </div>
+                    </div>
+    
+                        
+
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Correo Electrónico</label>
+         
+                      <input type="email" formControlName="correo" name="email" id ="email" class="form-control" placeholder="Ingrese su email">
+                      <small id="emailHelp" class="form-text text-muted">No compartiremos tu dirección de correo electrónico con nadie.</small>
+   
+                            <div class="alert-danger" *ngIf="correo.invalid && (correo.dirty || correo.touched)">
+                                    <div class="container-error-message" *ngIf="correo.errors.required">
+                                    Su correo es obligatorio
+                                    </div>
+                                    <div class="container-error-message" *ngIf="correo.errors.minlength">
+                                    Debe ser un correo válido
+                                    </div>
+                            </div>
+                    </div>
+    
+                       
+                    
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">País de Origen</label>
+
+                        <input type="text" formControlName="pais" name="pais" class="form-control" placeholder="Ingrese Pais de Origen">
+                        <div class="alert-danger" *ngIf="pais.invalid && (pais.dirty || pais.touched)">
+                            <div class="container-error-message" *ngIf="pais.errors.required">
+                              Pais de Origen es de caracter obligatorio
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Teléfono</label>
+
+                        <input type="number" formControlName="telefono" name="telefono" class="form-control" placeholder="Ingrese número de telefono">
+                        <div class="alert-danger" *ngIf="telefono.invalid && (telefono.dirty || telefono.touched)">
+                            <div class="container-error-message" *ngIf="telefono.errors.required">
+                              Teléfono es de cáracter obligatorio
+                            </div>
+                            <div class="container-error-message" *ngIf="telefono.errors.minlength">
+                                El telefono debe tener 7 caracteres
+                             </div>
+                        </div>
+                     </div>
+                    
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Latitud</label>
+
+                        <input type="number" formControlName="latitud" name="latitud" class="form-control" placeholder="Latitud">
+                        <div class="alert-danger" *ngIf="latitud.invalid && (latitud.dirty || latitud.touched)">
+                            <div class="container-error-message" *ngIf="latitud.errors.required">
+                              La latitud es obligatoria.
+                            </div>
+                           
+                        </div>
+                    </div>
+
+             <div class="form-group">
+                <label for="exampleInputEmail1">Longitud</label>
+
+                <input type="number" formControlName="longitud" name="longitud" class="form-control" placeholder="Longitud">
+                <div class="alert-danger" *ngIf="longitud.invalid && (longitud.dirty || longitud.touched)">
+                    <div class="container-error-message" *ngIf="longitud.errors.required">
+                      La longitud es obligatoria.
+                    </div>
+                </div>
+             </div>
+
+
+            <button class="btn btn-lg btn-primary btn-block" type="reset"  >Limpiar</button>
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit" routerLink="/dist"  >Cerrar</button>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!contacForm.valid" >Guardar</button>
+        
+          </form>
+      </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>

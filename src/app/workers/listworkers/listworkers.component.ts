@@ -1,42 +1,44 @@
 import { Component, OnInit } from '@angular/core';
-import { CookieService } from '../../services/cookie.service';
-import { CookieInterface } from '../../model/cookie';
-import { NgForm } from '@angular/forms';
+import { WorkerService } from '../../services/worker.service';
+import { WorkerInterface } from '../../model/worker';
 
 @Component({
-  selector: 'app-add-book',
-  templateUrl: './add-book.component.html',
-  styleUrls: ['./add-book.component.css']
+  selector: 'app-listworkers',
+  templateUrl: './listworkers.component.html',
+  styleUrls: ['./listworkers.component.css']
 })
-export class AddBookComponent implements OnInit {
+export class ListworkersComponent implements OnInit {
 
-  constructor(private dataApi: CookieService) { }
-  private books: CookieInterface[];
+  constructor(private dataApi: WorkerService) { }
+  private books: WorkerInterface[];
 
   ngOnInit() {
     this.getListBooks();
+
   }
 
-  getListBooks() {
+  getListBooks()
+  {
     this.dataApi.getAllBooks()
       .subscribe(books => {
         this.books = books;
       });
   }
-  
-  onDeleteBook(idBook: string): void {
+ 
+
+  onDeleteBook(idBook: string): void
+  {
     const confirmacion = confirm('¿Estás seguro que deseas eliminar el producto?');
     if (confirmacion) {
       this.dataApi.deleteBook(idBook);
     }
   }
-
-  onPreUpdateBook(book:CookieInterface){
+  onPreUpdateBook(book:WorkerInterface)
+  {
     //this.dataApi.selectedBook=Object.assign({},book);
     console.log('BOOK',book);
     this.dataApi.selectedBook = Object.assign({}, book);
 
   }
 
-  
 }

@@ -1,4 +1,5 @@
 <mat-sidenav-container>
+    <app-login></app-login>
     <mat-sidenav #sidenav>
         <app-navbar (closeSideNavigation)="sidenav.close()">
 
@@ -9,12 +10,10 @@
         <app-header (SideNavigationToggle)="sidenav.toggle()">
 
         </app-header>
-        <app-nav-tabs></app-nav-tabs>
         <main>
-                <router-outlet> </router-outlet>         
+            <router-outlet> </router-outlet>         
         </main>
     </mat-sidenav-content>
-
 </mat-sidenav-container>
 
 

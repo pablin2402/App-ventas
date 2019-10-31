@@ -13,8 +13,11 @@ export class CookieService {
   constructor(private afs: AngularFirestore) { 
     this.booksCollection =afs.collection<CookieInterface>('galletas');
     this.books=this.booksCollection.valueChanges();
+    this.contactCollection = afs.collection<CookieInterface>('galletas');
+
   }
-  
+  private contactCollection: AngularFirestoreCollection<CookieInterface>;
+
   private booksCollection: AngularFirestoreCollection<CookieInterface>;
   private books: Observable<CookieInterface[]>;
   private bookDoc: AngularFirestoreDocument<CookieInterface>;
@@ -49,6 +52,7 @@ export class CookieService {
   addBook(book: CookieInterface): void {
     this.booksCollection.add(book);
   }
+  
   updateBook(book: CookieInterface): void {
     let idBook = book.id;
     this.bookDoc = this.afs.doc<CookieInterface>(`books/${idBook}`);
@@ -57,6 +61,10 @@ export class CookieService {
   deleteBook(idBook: string): void {
     this.bookDoc = this.afs.doc<CookieInterface>(`books/${idBook}`);
     this.bookDoc.delete();
+  }
+  saveMessage(newContact: CookieInterface): void {
+    this.contactCollection.add(newContact);
+
   }
   
 }

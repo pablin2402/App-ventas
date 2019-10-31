@@ -12,30 +12,16 @@
                       </div>
                       <div class="form-group">
                         <input [(ngModel)]="email" 
-                        type="email" id="email" name="email" class="form-control" placeholder="Email" required>
+                        type="email" id="email" name="email" class="form-control" placeholder="Correo Electrónico" required>
                       </div>
                       <div class="form-group">
                         <input [(ngModel)]="password" 
-                        type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+                        type="password" id="password" name="password" class="form-control" placeholder="Contraseña" required>
                       </div>
-                      <button type="submit" class="btn btn-lg btn-primary btn-block">Login</button>
-                      <div class="form-group">
-                        <a routerLink="/registro" class="form-control login-user">¿Eres nuevo?</a>
-                      </div>
-                      <div class="form-group">
-                       
-                        <button class="btn btn-block btn-social btn-facebook" (click)="onLoginFacebook()">
-                          <span class="fa fa-facebook"></span>
-                          FACEBOOK
-                        </button>
-
-                        <button href="#" class="btn btn-block btn-social btn-google" (click)="onLoginGoogle()">
-                          <span class="fa fa-google"></span>
-                          GOOGLE
-                        </button>
-
-                      </div>
-                      <a href="" (click)="onLogout()">Salir</a>
+                      <button type="submit" class="btn btn-lg btn-primary btn-block">Ingresar</button>
+                     
+                      
+                      <!--a href="" (click)="onLogout()">Salir</a-->
                     </form>
                   </div>
                 </div>

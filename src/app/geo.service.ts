@@ -3,9 +3,8 @@ import { AngularFireDatabase} from 'angularfire2/database';
 import * as GeoFire from "geofire";
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
+
 export class GeoService {
 
   dbRef: any;
@@ -15,18 +14,36 @@ export class GeoService {
 
   constructor(private db: AngularFireDatabase) {
     this.dbRef = this.db.list('/locations');
-   // this.geoFire = new GeoFire(this.dbRef.$ref); 
-   }
+    //this.geoFire = new GeoFire(this.dbRef.query.ref);
 
+  }
+  private seedDatabase() {
+    let dummyPoints = [
+      [37.9, -122.1],
+      [38.7, -122.2],
+      [38.1, -122.3],
+      [38.3, -122.0],
+      [38.7, -122.1]
+    ]
+  
+    dummyPoints.forEach((val, idx) => {
+      let name = `dummy-location-${idx}`
+      console.log(idx)
+     // this.geo.setLocation(name, val)
+    })
+  }
+
+   //AÑADE GEOFIRE A LA BASE DE DATOS
    setLocation(key: string, coords: Array<number>){
     this.geoFire.set(key, coords)
-      .then(_=> console.log('/locacion '))
+      .then(_=> console.log('locacion '))
       .catch(err => console.log(err))
   }
 
   getLocations(radius: number, coords: Array<number>){
       this.geoFire.query({
-        center:coords
+        center:coords,
+        radius: radius
 
   })
   .on('key_entered', (key,location, distance)=> {
@@ -37,7 +54,7 @@ export class GeoService {
           let currentHits = this.hits.value
           currentHits.push(hit)
           this.hits.next(currentHits)
-       })
+       }) 
     }
 
   

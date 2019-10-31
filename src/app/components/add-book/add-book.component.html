@@ -1,16 +1,19 @@
 <section class="row mt-5">
         <div class="col">
           <button class="btn btn-primary float-right mb-3" data-toggle="modal"
-           data-target="#modalBook" >Nuevo Libro</button>
+          routerLink="/add">Nueva Galleta</button>
           <table class="table table-hover">
             <thead>
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Titulo</th>
-                <th scope="col">Autor</th>
-                <th scope="col">Idioma</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Ingredientes</th>
                 <th scope="col">Precio</th>
                 <th scope="col">Oferta</th>
+                <th scope="col">Alergenos</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Peso</th>
                 <th scope="col">&nbsp;</th>
                 <th scope="col">&nbsp;</th>
               </tr>
@@ -19,13 +22,17 @@
 
               <tr *ngFor="let book of books; index as i">
                 <th scope="row">{{i+1}}</th>
-                <td>{{book.titulo}}</td>
-                <td>{{book.autor}}</td>
-                <td>{{book.idioma}}</td>
+                <td>{{book.nombre}}</td>
+                <td>{{book.descripcion}}</td>
+                <td>{{book.ingredientes}}</td>
                 <td>{{book.precio}}</td>
                 <td>{{book.oferta == 1 ? 'Sí': 'No'}}</td>
+                <td>{{book.Alergenos}}</td>
+                <td>{{book.marca}}</td>
+                <td>{{book.peso}}</td>
+
+
                 
-              
                   <td>
                     <button class="btn btn-secondary" data-toggle="modal"
                     data-target="#modalBook" (click)="onPreUpdateBook(book)">Actualizar</button>
