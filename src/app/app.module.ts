@@ -59,6 +59,7 @@ import { AngularFirestoreModule } from "angularfire2/firestore";
 
 import { ListcookiesComponent } from './components/listcookies/listcookies.component';
 import { DetailsCookieComponent } from './components/details-cookie/details-cookie.component';
+import { CarritoNuevoComponent } from './components/carrito-nuevo/carrito-nuevo.component';
 
 const MaterialComponents = [
   MatButtonModule
@@ -90,7 +91,10 @@ const MaterialComponents = [
     CompraComponent,
     
 
-    CarritoComponent
+    CarritoComponent,
+    
+
+    CarritoNuevoComponent
  
   ],
   imports: [

@@ -7,12 +7,21 @@
   }
   
   .form-container h1 {
-    background: #43d1af;
+    background: #2a977e;
     padding: 20px 0;
     font-size: 140%;
     font-weight: 300;
     text-align: center;
     color: #fff;
+    margin: -16px -16px 16px -16px;
+  }
+  .form-container h2 {
+    background: #d5e0de;
+    padding: 20px 0;
+    font-size: 140%;
+    font-weight: 300;
+    text-align: center;
+    color: rgb(68, 70, 70);
     margin: -16px -16px 16px -16px;
   }
   
@@ -47,13 +56,13 @@
     box-sizing: border-box;
     width: 100%;
     padding: 3%;
-    background: #43d1af;
+    background: #30af92;
     border-bottom: 2px solid #30c29e;
     border-top-style: none;
     border-right-style: none;
     border-left-style: none;
     color: #fff;
-    font-size: 15px;
+    font-size: 25px;
   }
   
   .form-container .btn-send:hover:not([disabled]) {
@@ -87,4 +96,9 @@
     align-items: center;
     align-content: center;
     
+  }
+
+  .boton{
+    height: auto;
+    width: 50px;
   }

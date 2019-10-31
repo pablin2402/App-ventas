@@ -3,31 +3,26 @@
 
     <a mat-tab-link routerLink="/"
     routerLinkActive #home="routerLinkActive"
-    [active]="home.isActive">
-    Home
+    [active]="home.isActive" class="fa fa-home" aria-hidden="true">
+     Inicio
     </a>
 
-    <a mat-tab-link routerLink="/addbook"
-    routerLinkActive #configuraciones="routerLinkActive"
-    [active]="configuraciones.isActive">
-    Listar Productos
-    </a>
     <a mat-tab-link routerLink="/cookies"
     routerLinkActive #configuraciones="routerLinkActive"
 
-    [active]="configuraciones.isActive"> 
+    [active]="configuraciones.isActive" class="fa fa-shopping-basket" aria-hidden="true"> 
       Nuestros Productos
     </a>
-
-    <a mat-tab-link routerLink="/registro"
+    
+    <a mat-tab-link routerLink="/carritoNuevo"
     routerLinkActive #configuraciones="routerLinkActive"
-    [active]="configuraciones.isActive">
-    Registro
+    [active]="configuraciones.isActive" class="fa fa-shopping-cart">
+      Carrito 
     </a>
     <a mat-tab-link routerLink="/contacto"
     routerLinkActive #contacto="routerLinkActive"
-    [active]="contacto.isActive">
-    Contacto
+    [active]="contacto.isActive" class="fa fa-envelope" aria-hidden="true">
+      Contacto
     </a>
   </nav>
 

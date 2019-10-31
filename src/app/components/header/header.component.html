@@ -38,19 +38,19 @@
              </li>
 
              <li class="nav-item" *ngIf="isLogged">
-               <a class="nav-link" routerLink="/profile">
-                 Your Profile
+               <a class="fa nav-link fa-user-circle-o" aria-hidden="true" routerLink="/profile">
+                 Mi Perfil
                </a>
              </li>
 
-             <li class="nav-item" *ngIf="isLogged"><!-- & User.role == 'Cliente'" -->
-               <a class="nav-link" routerLink="/carrito">
-               Cart  ({{cart?.totalProducts}})
+             <!--<li class="nav-item" *ngIf="isLogged">
+               <a class="nav-link" routerLink="/carritoNuevo">
+               Carrito
                </a>
-             </li>
+             </li>-->
 
-             <li class="nav-item" *ngIf="isLogged">
-               <a class="nav-link" routerLink="/admin/list-books">
+             <li class="nav-item " *ngIf="isLogged">
+               <a class="fa nav-link fa-users" routerLink="/admin/list-books"  >
                  About Us
                </a>
              </li>
@@ -62,7 +62,7 @@
               </li>
 
              <li class="nav-item" *ngIf="isLogged">
-               <a href="#" class="nav-link" (click)="onLogout()">
+               <a href="#" class="fa nav-link fa-times" (click)="onLogout()">
                  Log Out
                </a>
              </li>

@@ -25,26 +25,17 @@
                 Dirección debe contener al menos 10 caracteres.
             </div>
         </div>
-        <!--CANTIDAD DEL PRODUCTO-->
-        <input type="text" formControlName="cantidad" placeholder="Cantidad deseada de este producto">
-        <div class="alert-danger" *ngIf="cantidad.invalid && (cantidad.dirty || cantidad.touched)">
-            <div class="container-error-message" *ngIf="cantidad.errors.required">
-                Campo requerido.
-            </div>
+        <div id="carritoc">
+            <h2> Productos:</h2>
+            <ul>
+                <li class="list-group-item" *ngFor="let carritoc of carritoc">
+                    {{carritoc}}
+                </li>
+            </ul>
+
         </div>
+        <h2> Precio total: {{ptotal}} Bs.</h2>
 
         <button type="submit" class="btn-comprar" [disabled]="!compraForm.valid">Realizar Compra</button>
     </form>
 </div>
-
-
-
-<!--
-  <div id="datos">
-       <h4  routerLink="/book/{{book.id}}" class="badge badge-info">PRODUCTO: {{book.titulo}}</h4>
-       <p   class="badge badge-info">
-             TOTAL A PAGAR:   {{book.precio}}€
-               Bs.</p><br>
-      
-    </div>
--->

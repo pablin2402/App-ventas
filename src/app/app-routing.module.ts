@@ -23,7 +23,7 @@ import { CompraComponent} from './components/compra/compra.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
 import { AdminComponent } from './admin/admin/admin.component';
 import { ProductsComponent } from './shop/products/products.component';
-
+import { CarritoNuevoComponent} from './components/carrito-nuevo/carrito-nuevo.component';
 
 import { ListcookiesComponent } from './components/listcookies/listcookies.component';
 import { DetailsCookieComponent } from './components/details-cookie/details-cookie.component';
@@ -51,7 +51,7 @@ const routes: Routes=[
 
   {path: 'contacto', component: ContactoComponent},
   {path: 'comprar', component: CompraComponent},
-
+  {path: 'carritoNuevo', component: CarritoNuevoComponent},
 
   {path: 'admin', component: AdminComponent, canActivate:[AuthGuard]},
   {path: 'contacto', component: ContactoComponent, canActivate:[AuthGuard]},

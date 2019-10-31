@@ -1,0 +1,20 @@
+.carrito{
+    
+   
+    height: auto;
+    background: #61c0c081;
+    border-color: #aca9a998;
+    border: 1px solid;
+    align-content: flex-end;
+    float: right;
+    
+   
+}
+.books{
+    float: left;
+    width: 100px;
+    height: auto;
+     margin-right: 50%;
+}
+section {   
+     overflow:hidden; } 
