@@ -1,7 +1,7 @@
-import { GalletaInterface } from './galleta';
+import { Galleta } from './galleta';
 
 describe('Galleta', () => {
   it('should create an instance', () => {
-    expect(new GalletaInterface()).toBeTruthy();
+    expect(new Galleta()).toBeTruthy();
   });
 });

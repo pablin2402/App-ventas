@@ -3,7 +3,7 @@ import { fallIn, moveIn} from 'src/app/router.animation';
 import { BackendService } from '../services/backend.service';
 import{ AngularFireAuth } from '@angular/fire/auth';
 import { AuthService } from '../../services/auth.service';
-import { CartService } from '../../common/cart.service';
+
 
 @Component({
   selector: 'app-header',
@@ -38,50 +38,13 @@ export class HeaderComponent  implements OnInit{
     private _backendservice: BackendService,
     private authService: AuthService,
     private afsAuth: AngularFireAuth,
-    public cartService: CartService
-  )
+      )
   {
 
   }
 
   ngOnInit()
   {
-    this.auth.User.subscribe(data =>{
-      if(data)
-      {
-        const cartRef = this.cartService.myCartRef(data.uid).get();
-        cartRef.then((cart) =>{
-          if(cart.exists)
-          {
-            this.cartService.myCart(data.uid).subscribe(myCart => {
-              this.cart = myCart.payload.data();
-            })
-          }
-          else
-          {
-            this.cartService.createCart(data.uid);
-            this.cartService.myCart(data.uid).subscribe(myCart => {
-              this.cart = myCart.payload.data();
-            })
-          }
-        })
-      }
-    })
-
-    /*
-    this.counter=0;
-    this.configData= this._backendservice.getConfig();
-    this._backendservice.getCartTotal().subscribe(
-      (res) => {
-        this.counter=res;
-      }
-    );
-     this._backendservice.getUserStatus().subscribe(
-      (res) => {
-        this.userStatusColor = res ? "primary": "warm";
-      }
-    );
-*/
       this.getCurrentUser();
   }
 
