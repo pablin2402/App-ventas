@@ -17,50 +17,39 @@ import { DetailsBookComponent } from './components/details-book/details-book.com
 import { AuthGuard } from './guards/auth.guard';
 import { from } from 'rxjs';
 import { GoogleMapComponent } from './components/google-map/google-map.component';
-import { ContactoComponent} from './components/contacto/contacto.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
 
-import { CompraComponent} from './components/compra/compra.component';
-import { CarritoComponent } from './components/carrito/carrito.component';
-import { AdminComponent } from './admin/admin/admin.component';
-import { ProductsComponent } from './shop/products/products.component';
-import { CarritoNuevoComponent} from './components/carrito-nuevo/carrito-nuevo.component';
+import { CompraComponent } from './components/compra/compra.component';
+import { CarritoNuevoComponent } from './components/carrito-nuevo/carrito-nuevo.component';
 
 import { ListcookiesComponent } from './components/listcookies/listcookies.component';
 import { DetailsCookieComponent } from './components/details-cookie/details-cookie.component';
 
-const routes: Routes=[
-  {path: '', redirectTo: '/home', pathMatch:'full'},
-  {path: 'aboutus', component: AboutusComponent, canActivate: [AuthGuard]},
-  {path: 'header', component: HeaderComponent},
-  {path: 'footer', component: FooterComponent},
-  {path: 'home', component: HomeComponent, canActivate:[AuthGuard] },
+const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'aboutus', component: AboutusComponent, canActivate: [AuthGuard] },
+  { path: 'header', component: HeaderComponent },
+  { path: 'footer', component: FooterComponent },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   //CAN ACTIVATE SIRVE PARA BLOQUEAR FRAMES
   //ADMIN
-  {path: 'configuraciones', component: ConfiguracionesComponent,canActivate: [AuthGuard]},
-  {path: 'addbook', component: AddBookComponent},
-  {path: 'navbar', component: NavbarComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'registro', component: RegistroComponent},
-  {path: 'profile', component: ProfileComponent },
-  {path: 'google', component: GoogleMapComponent },
+  { path: 'configuraciones', component: ConfiguracionesComponent, canActivate: [AuthGuard] },
+  { path: 'addbook', component: AddBookComponent },
+  { path: 'navbar', component: NavbarComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'registro', component: RegistroComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'google', component: GoogleMapComponent },
+  { path: 'cookies', component: ListcookiesComponent },
+  { path: 'galleta/:id', component: DetailsCookieComponent },
+  { path: 'book/:id', component: DetailsBookComponent },
+  { path: 'contacto', component: ContactoComponent },
+  { path: 'comprar', component: CompraComponent },
+  { path: 'carritoNuevo', component: CarritoNuevoComponent },
+  { path: 'contacto', component: ContactoComponent, canActivate: [AuthGuard] },
 
-  {path: 'cookies', component: ListcookiesComponent },
-  {path: 'galleta/:id', component: DetailsCookieComponent },
-
-  {path: 'book/:id', component: DetailsBookComponent },
-
-  {path: 'contacto', component: ContactoComponent},
-  {path: 'comprar', component: CompraComponent},
-  {path: 'carritoNuevo', component: CarritoNuevoComponent},
-
-  {path: 'admin', component: AdminComponent, canActivate:[AuthGuard]},
-  {path: 'contacto', component: ContactoComponent, canActivate:[AuthGuard]},
-  {path: 'carrito', component: CarritoComponent },
-  {path: 'shop' , component: ProductsComponent},
-
-  {path: 'bar', component: NavTabsComponent},
-
-  {path: '**', redirectTo: '/aboutus', pathMatch:'full'},
+  { path: 'bar', component: NavTabsComponent },
+  { path: '**', redirectTo: '/aboutus', pathMatch: 'full' },
 
 ]
 
@@ -72,6 +61,6 @@ const routes: Routes=[
     RouterModule.forRoot(routes)
   ],
   exports: [RouterModule],
-  declarations:[]
+  declarations: []
 })
 export class AppRoutingModule { }

@@ -2,7 +2,8 @@
     
    
     height: auto;
-    background: #61c0c081;
+    /* background: #61c0c081;*/
+    background: #bde5ce;
     border-color: #aca9a998;
     border: 1px solid;
     align-content: flex-end;
@@ -18,3 +19,7 @@
 }
 section {   
      overflow:hidden; } 
+
+.carrito h5{
+    text-align: right;
+}
