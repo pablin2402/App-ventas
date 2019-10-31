@@ -22,6 +22,7 @@ import { ContactoComponent } from './components/contacto/contacto.component';
 import { CompraComponent } from './components/compra/compra.component';
 import { CarritoNuevoComponent } from './components/carrito-nuevo/carrito-nuevo.component';
 
+
 import { ListcookiesComponent } from './components/listcookies/listcookies.component';
 import { DetailsCookieComponent } from './components/details-cookie/details-cookie.component';
 
@@ -48,8 +49,22 @@ const routes: Routes = [
   { path: 'carritoNuevo', component: CarritoNuevoComponent },
   { path: 'contacto', component: ContactoComponent, canActivate: [AuthGuard] },
 
-  { path: 'bar', component: NavTabsComponent },
-  { path: '**', redirectTo: '/aboutus', pathMatch: 'full' },
+
+  {path: 'cookies', component: ListcookiesComponent },
+  {path: 'galleta/:id', component: DetailsCookieComponent },
+
+  {path: 'book/:id', component: DetailsBookComponent },
+
+  {path: 'contacto', component: ContactoComponent},
+  {path: 'comprar', component: CompraComponent},
+  {path: 'carritoNuevo', component: CarritoNuevoComponent},
+  {path: 'contacto', component: ContactoComponent, canActivate:[AuthGuard]},
+  
+
+  {path: 'bar', component: NavTabsComponent},
+
+  {path: '**', redirectTo: '/aboutus', pathMatch:'full'},
+
 
 ]
 

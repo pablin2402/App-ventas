@@ -1,89 +1,67 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <!-- BOTON DE DESPLAZAMIENTE ANGULAR MATERIAL -->
+  <div>
+    <button mat-icon-button (click)="onToggleOpenSideNav()">
+      <mat-icon>menu</mat-icon>
     </button>
-    <!-- BOTON DE DESPLAZAMIENTE ANGULAR MATERIAL -->
-    <div>
-        <button mat-icon-button (click)="onToggleOpenSideNav()">
-          <mat-icon>menu</mat-icon>
-        </button>
-    </div>
+  </div>
 
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <!-- TITULO DE LA APP -->
-      <a class="navbar-brand" href="#">{{app_name}}</a>
-      <!-- {%FOOTER_LINK} -->
-      <ul class="navbar-nav mr-auto">
-          <li class="nav-item" *ngIf="!isLogged">
-                <a class="nav-link" routerLink="/user/register">R
-              </a>
-            </li>
-            LOGGED: {{isLogged}}
-      </ul>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <!-- TITULO DE LA APP -->
+    <a class="navbar-brand" href="#">{{app_name}}</a>
+    <!-- {%FOOTER_LINK} -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" *ngIf="!isLogged">
+        <a class="nav-link" routerLink="/user/register">R
+        </a>
+      </li>
+      LOGGED: {{isLogged}}
+    </ul>
 
-      <form class="form-inline my-2 my-lg-0">
+    <form class="form-inline my-2 my-lg-0">
 
-         <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-               <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-                 <mat-icon>search</mat-icon>
-               </button>
-       </form>
+      <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+        <mat-icon>search</mat-icon>
+      </button>
+    </form>
 
-      <ul class="navbar-nav ml-auto">
+    <ul class="navbar-nav ml-auto">
 
-             <li class="nav-item" *ngIf="!isLogged">
-               <a class="nav-link" routerLink="/registro">
-                 Registry
-               </a>
-             </li>
+      <li class="nav-item" *ngIf="!isLogged">
+        <a class="nav-link" routerLink="/registro">
+          Registry
+        </a>
+      </li>
 
-             <li class="nav-item" *ngIf="isLogged">
-               <a class="fa nav-link fa-user-circle-o" aria-hidden="true" routerLink="/profile">
-                 Mi Perfil
-               </a>
-             </li>
+      <li class="nav-item" *ngIf="isLogged">
+        <a class="fa nav-link fa-user-circle-o" aria-hidden="true" routerLink="/profile">
+          Mi Perfil
+        </a>
+      </li>
 
-             <!--<li class="nav-item" *ngIf="isLogged">
-               <a class="nav-link" routerLink="/carritoNuevo">
-               Carrito
-               </a>
-             </li>-->
+      <li class="nav-item " *ngIf="isLogged">
+        <a class="fa nav-link fa-users" routerLink="/admin/list-books">
+          About Us
+        </a>
+      </li>
 
-             <li class="nav-item " *ngIf="isLogged">
-               <a class="fa nav-link fa-users" routerLink="/admin/list-books"  >
-                 About Us
-               </a>
-             </li>
+      <li class="nav-item" *ngIf="!isLogged">
+        <a class="nav-link" routerLink="/login">
+          Log In
+        </a>
+      </li>
 
-             <li class="nav-item" *ngIf="!isLogged">
-               <a class="nav-link" routerLink="/login">
-                 Log In
-                 </a>
-              </li>
+      <li class="nav-item" *ngIf="isLogged">
+        <a href="#" class="fa nav-link fa-times" (click)="onLogout()">
+          Log Out
+        </a>
+      </li>
 
-             <li class="nav-item" *ngIf="isLogged">
-               <a href="#" class="fa nav-link fa-times" (click)="onLogout()">
-                 Log Out
-               </a>
-             </li>
-
-
-            <!--<a
-            ngIf = "User.role == Cliente"
-            routerLinkActive = "active"
-            routerLink = "/"
-            [routerLinkActiveOptions] ="{exact:true}">
-            Pedidos
-            </a>
-            <a
-            *NgIf = "user.role == 'Administrador'"
-            routerLinkActive = "active"
-            routerLink = "/add-book"
-            [routerLinkActiveOptions]="{exact:true}">
-            Administracion
-            </a>
-            //cambiar la dir-->
-
-     </ul>
+    </ul>
   </div>
 </nav>

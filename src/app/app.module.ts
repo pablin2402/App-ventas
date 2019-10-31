@@ -15,7 +15,6 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
-import { UserComponent } from './components/user/user.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { CustommaterialModule } from './custommaterial.module';
@@ -31,6 +30,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { DetailsBookComponent } from './components/details-book/details-book.component';
 import { CompraComponent } from './components/compra/compra.component';
+
 
 import { from } from 'rxjs';
 
@@ -64,8 +64,7 @@ const MaterialComponents = [
     ListcookiesComponent,
     ProfileComponent,
     HeaderComponent,
-    UserComponent,
-    DetailsCookieComponent,
+     DetailsCookieComponent,
     FooterComponent,
     ConfiguracionesComponent,
     AddBookComponent,
@@ -79,7 +78,9 @@ const MaterialComponents = [
     NavTabsComponent,
     AboutusComponent,
     ContactoComponent,
+
     CompraComponent,
+
     CarritoNuevoComponent
  
   ],
@@ -107,9 +108,8 @@ const MaterialComponents = [
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
-   
-   
   ],
+
   exports: [
     MatListModule,
     MatButtonModule,
