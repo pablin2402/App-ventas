@@ -18,9 +18,15 @@ import { AuthGuard } from './guards/auth.guard';
 import { from } from 'rxjs';
 import { GoogleMapComponent } from './components/google-map/google-map.component';
 import { ContactoComponent} from './components/contacto/contacto.component';
+
+import { CompraComponent} from './components/compra/compra.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
 import { AdminComponent } from './admin/admin/admin.component';
 import { ProductsComponent } from './shop/products/products.component';
+
+
+import { ListcookiesComponent } from './components/listcookies/listcookies.component';
+import { DetailsCookieComponent } from './components/details-cookie/details-cookie.component';
 
 const routes: Routes=[
   {path: '', redirectTo: '/home', pathMatch:'full'},
@@ -37,11 +43,21 @@ const routes: Routes=[
   {path: 'registro', component: RegistroComponent},
   {path: 'profile', component: ProfileComponent },
   {path: 'google', component: GoogleMapComponent },
+
+  {path: 'cookies', component: ListcookiesComponent },
+  {path: 'galleta/:id', component: DetailsCookieComponent },
+
   {path: 'book/:id', component: DetailsBookComponent },
+
+  {path: 'contacto', component: ContactoComponent},
+  {path: 'comprar', component: CompraComponent},
+
+
   {path: 'admin', component: AdminComponent, canActivate:[AuthGuard]},
   {path: 'contacto', component: ContactoComponent, canActivate:[AuthGuard]},
   {path: 'carrito', component: CarritoComponent },
   {path: 'shop' , component: ProductsComponent},
+
   {path: 'bar', component: NavTabsComponent},
 
   {path: '**', redirectTo: '/aboutus', pathMatch:'full'},

@@ -1,26 +1,23 @@
-
-      <div class="card text-center">
-          
-
-          <div class="card-body">
+ <div class="card text-center">
+    <div class="card-body">
         
-              <div class="row no-gutters">
-              <div class="col-md-4">
-                  <img class="img-fluid" src="{{book.portada}}" alt="{{book.titulo}}">
-                  </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                    <div class="jumbotron">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+            <img class="img-fluid" src="{{book.portada}}" alt="{{book.titulo}}">
+        </div>
+           <div class="col-md-8">
+              <div class="card-body">
+                <div class="jumbotron">
                         <h4 class="display-4">{{book.titulo}}</h4>
                         
                         <p class="lead">de {{book.autor}}</p>
                         <hr class="my-4"> 
-                    </div>
-                    <div class="card border-warning mb-3" style="max-width: 18rem;">
+                </div>
+                <div class="card border-warning mb-3" style="max-width: 18rem;">
                         <div class="card-header">Precio</div>
                           <p class="card-text">{{book.precio}} Bs.</p>
-                        </div>
-                      </div>
+                  </div>
+              </div>
                    <p class="card-text">
                       
                       {{book.descripcion}}

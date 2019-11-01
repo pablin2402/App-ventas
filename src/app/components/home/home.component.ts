@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataApiService } from '../../services/data-api.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,10 +11,8 @@ import { DataApiService } from '../../services/data-api.service';
 
 export class HomeComponent implements OnInit {
 
-  constructor(private dataApi: DataApiService)
-  {
 
-  }
+  constructor(private dataApi: DataApiService, private router: Router) { }
 
   public books =[];
   public book='';
@@ -28,4 +27,8 @@ export class HomeComponent implements OnInit {
 
   }
 
+  irformcomprar():void{
+    this.router.navigate(['/comprar']);
+  }
+  
 }

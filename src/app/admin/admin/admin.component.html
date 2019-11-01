@@ -1,5 +1,3 @@
-<p>admin works!</p>
-
 
 <mat-tab-group *ngIf="auth.user | async as user">
   <mat-tab label="Administracion de la tienda" *ngIf="user.role === 'admin' || user.role === 'editor'">

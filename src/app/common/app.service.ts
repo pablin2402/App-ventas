@@ -4,13 +4,12 @@ import 'rxjs/add/observable/of';
 import { of } from 'rxjs';
 
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
+
 export class AppService {
 //Preloader
 
-  loading$: Observable<boolean> = Observable.of(true);
+loading$: Observable<boolean> = Observable.of(false);
 
   constructor()
   {

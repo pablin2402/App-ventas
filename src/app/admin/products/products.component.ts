@@ -7,7 +7,6 @@ import { ProductsService } from '../../common/products.service';
 import { NgModule } from '@angular/core';
 import { ProductsDialogComponent } from "../products-dialog/products-dialog.component";
 import { FormsModule} from '@angular/forms';
-import {Product} from "../../model/product";
 
 @Component({
   selector: 'app-products',
@@ -28,7 +27,7 @@ export class ProductsComponent implements OnInit {
     public auth: AuthService
   )
   {
-    this.productService.products().valueChanges().subscribe((data) => {
+    this.productService.galletas().valueChanges().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.sort = this.sort;
     },
@@ -50,14 +49,14 @@ export class ProductsComponent implements OnInit {
 
   }
 
-  trackById(index, product: Product)
+  trackById(index, product: Galleta)
   {
 
     return product.id;
 
   }
 
-  openDialog(product: Product)
+  openDialog(product: Galleta)
   {
 
     this.dialog.open(ProductsDialogComponent, ProductsComponent.dialogConfig(product));
@@ -67,7 +66,7 @@ export class ProductsComponent implements OnInit {
   addProduct()
   {
 
-    let product: Product = new Product;
+    let product: Galleta = new Galleta;
     this.dialog.open(ProductsDialogComponent, ProductsComponent.dialogConfig(product));
 
   }
@@ -82,7 +81,7 @@ export class ProductsComponent implements OnInit {
 
   }
 
-  remove(product: Product)
+  remove(product: Galleta)
    {
 
     this.productService.remove(product.id).then(() => {

@@ -7,7 +7,6 @@ import { Galleta } from "../../model/galleta";
 import { ProductsService } from '../../common/products.service';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA,  NO_ERRORS_SCHEMA} from '@angular/core';
 import { FormsModule} from '@angular/forms';
-import { Product } from "../../model/product";
 import { Upload } from "../../model/upload";
 import { UploadService } from '../../admin/upload.service';
 
@@ -21,19 +20,19 @@ export class ProductsDialogComponent implements OnInit {
   uploads;
 
   constructor(
-      private afs: AngularFirestore,
-      public dialogRef: MatDialogRef<ProductsDialogComponent>,
-    /*  @Inject(MAT_DIALOG_DATA) public data: Galleta,*/
-    @Inject(MAT_DIALOG_DATA) public data: Product,
-      private snackService: SnackService,
-      public auth: AuthService,
-      private productService: ProductsService,
-      private uploadService: UploadService
+    private afs: AngularFirestore,
+    public dialogRef: MatDialogRef<ProductsDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: Galleta,
+    private snackService: SnackService,
+    public auth: AuthService,
+    private productService: ProductsService,
+    private uploadService: UploadService
+ 
   )
   {
   //  console.log(data);
     if(data.id) {
-        this.uploads = this.productService.product(this.data.id).collection('uploads').snapshotChanges().map(actions => {
+        this.uploads = this.productService.galleta(this.data.id).collection('uploads').snapshotChanges().map(actions => {
           return actions.map(upload => {
             const data = upload.payload.doc.data();
             const id = upload.payload.doc.id;
@@ -90,18 +89,18 @@ export class ProductsDialogComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  removeUpload(upload: Upload) {
 
-     this.uploadService.removeFile(upload.id).then(() => {
-        this.afs.doc(`products/${this.data.id}/uploads/${upload.id}`).delete().then(() => {
-          this.snackService.launch("Adjunto eliminado", "Tienda", 4000);
-        })
-          .catch(error => {
-            this.snackService.launch("Error: " + error.message, "Tienda", 4000);
-          })
+  removeUpload(upload: Upload) 
+  {
+    this.uploadService.removeFile(upload.id).then(() => {
+      this.afs.doc(`products/${this.data.id}/uploads/${upload.id}`).delete().then(() => {
+        this.snackService.launch("Adjunto eliminado", "Tienda", 4000);
       })
-
-    }
+        .catch(error => {
+          this.snackService.launch("Error: " + error.message, "Tienda", 4000);
+        })
+    })
+  }
 
 
 }

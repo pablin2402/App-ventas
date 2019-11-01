@@ -1,0 +1,209 @@
+[33mcommit a0aa603c2cebc9d59ed522efdd2ffcacf8661bef[m[33m ([m[1;36mHEAD -> [m[1;32mVanessa[m[33m, [m[1;31morigin/Vanessa[m[33m, [m[1;32mmaster[m[33m)[m
+Merge: ae91e43 80293d8
+Author: vane_bustillos <vanebustillos1@gmail.com>
+Date:   Thu Oct 31 17:55:12 2019 -0400
+
+    Eliminando archivos repetidos o que no se usan
+
+[33mcommit 80293d85e3796782edc5ad158739df0bba164b34[m
+Author: vane_bustillos <vanebustillos1@gmail.com>
+Date:   Thu Oct 31 17:28:46 2019 -0400
+
+    Eliminando archivos repetidos o que no se usan
+
+[33mcommit ae91e43f19023e146f008fa3144db4e8e119f525[m
+Author: vane_bustillos <vanebustillos1@gmail.com>
+Date:   Thu Oct 31 16:43:15 2019 -0400
+
+    .
+
+[33mcommit 66d7a4f2cc181740f7ee4be9221d2457862b5684[m
+Author: vane_bustillos <vanebustillos1@gmail.com>
+Date:   Thu Oct 31 16:15:51 2019 -0400
+
+    Funcionalidad del carrito de compras funcionando
+
+[33mcommit 1bb721600644e79a7d70c54546342140ebd50aee[m
+Author: vane_bustillos <vanebustillos1@gmail.com>
+Date:   Wed Oct 30 17:22:41 2019 -0400
+
+    Merge 3. Listado de productos correcto, añadir el form de compra a los productos para prueba
+
+[33mcommit 00783f1dd421ba32e106320edb65994743c928e2[m
+Merge: 131b03f d7cc92e
+Author: vane_bustillos <vanebustillos1@gmail.com>
+Date:   Wed Oct 30 16:37:33 2019 -0400
+
+    Merge3
+
+[33mcommit 131b03fe9ea7e2f4df910648988a56d30243da19[m
+Merge: f624c1e b873530
+Author: vane_bustillos <vanebustillos1@gmail.com>
+Date:   Wed Oct 30 16:23:38 2019 -0400
+
+    Merge2
+
+[33mcommit f624c1eeee145a5329ef4359d78d9a4ffaa47abd[m
+Author: vane_bustillos <vanebustillos1@gmail.com>
+Date:   Wed Oct 30 15:31:27 2019 -0400
+
+    Merge2
+
+[33mcommit b873530eec23609ec244ed2d75a1dbef68aed7b7[m[33m ([m[1;31morigin/Andita[m[33m, [m[1;32mAndita[m[33m)[m
+Author: anditavillarroel99 <anditavillarroel99@gmail.com>
+Date:   Wed Oct 30 15:02:06 2019 -0400
+
+    Correcciones Registro, carrito, auth
+
+[33mcommit a8c181a384ea5444f7601ec9736e4de50918c0fc[m
+Merge: febd600 b3eb195
+Author: vane_bustillos <vanebustillos1@gmail.com>
+Date:   Wed Oct 30 15:01:46 2019 -0400
+
+    Merge de rama Andi
+
+[33mcommit d7cc92ec74d0f4aaca52c451889f8c7624af50e7[m[33m ([m[1;31morigin/pablo[m[33m)[m
+Author: pablin2402 <pabloperedo04@gmail.com>
+Date:   Tue Oct 29 22:41:37 2019 -0400
+
+    cambios
+
+[33mcommit b3eb19550ebc4e7eb1ae81b505e18af62dfa69e2[m
+Author: anditavillarroel99 <anditavillarroel99@gmail.com>
+Date:   Tue Oct 29 22:11:02 2019 -0400
+
+    Segunda version Carrito
+
+[33mcommit 39e30ca1313b135c390bec3f1950ac28a0c466c8[m
+Author: anditavillarroel99 <anditavillarroel99@gmail.com>
+Date:   Tue Oct 29 13:28:02 2019 -0400
+
+    1ra version administracion tienda
+
+[33mcommit 65a7d696885ccad98b807d4a8ba5f3ccc3f394b3[m
+Author: anditavillarroel99 <anditavillarroel99@gmail.com>
+Date:   Tue Oct 29 11:49:59 2019 -0400
+
+    correcciones1
+
+[33mcommit eef36d50a7519adb990cefbf153e34d0572e5cd0[m
+Author: pablin2402 <pabloperedo04@gmail.com>
+Date:   Mon Oct 28 17:18:30 2019 -0400
+
+    bugs
+
+[33mcommit b99cfbc9fd97062e76de2a69644c3f8f68491773[m
+Author: pablin2402 <pabloperedo04@gmail.com>
+Date:   Mon Oct 28 17:08:15 2019 -0400
+
+    Corrección de bugs y mostrar productos
+
+[33mcommit 75a723f9c6d081c81caf2cd0075e7b44cce93b34[m
+Author: anditavillarroel99 <anditavillarroel99@gmail.com>
+Date:   Mon Oct 28 17:04:12 2019 -0400
+
+    1ra parte de preload y snackbars
+
+[33mcommit 0587cc5a93f41eb62571decddef8a036db3259d4[m
+Author: anditavillarroel99 <anditavillarroel99@gmail.com>
+Date:   Mon Oct 28 13:42:54 2019 -0400
+
+    2da version y correccion
+
+[33mcommit b9f8308276bb5e211a9d7d1e4972c2cabf320526[m
+Author: anditavillarroel99 <anditavillarroel99@gmail.com>
+Date:   Mon Oct 28 07:47:13 2019 -0400
+
+    1ra version 'carrito de compras'
+
+[33mcommit febd60095f95bd2e76916dc045cbbb08d4cf45b9[m
+Author: vane_bustillos <vanebustillos1@gmail.com>
+Date:   Mon Oct 28 01:01:42 2019 -0400
+
+    Función compra incompleta y validación de campos en Login-Registro
+
+[33mcommit 4520c604e5b7c7fea40e216c8a592a5e9ab59895[m
+Author: pablin2402 <pabloperedo04@gmail.com>
+Date:   Sun Oct 27 22:49:44 2019 -0400
+
+    Merge Vane
+
+[33mcommit 11f8b8ea5f66b251cbb34eba1a293efe09d0f320[m
+Merge: ac93e72 7802185
+Author: pablin2402 <pabloperedo04@gmail.com>
+Date:   Sun Oct 27 22:07:36 2019 -0400
+
+    Vanee
+
+[33mcommit ac93e72450669793f197e954a52beec2c48825da[m
+Merge: 250ebb4 ab89909
+Author: pablin2402 <pabloperedo04@gmail.com>
+Date:   Sun Oct 27 22:04:02 2019 -0400
+
+    añadido contactos
+
+[33mcommit 7802185cdc0694ef109892f2b559fa421b8a22c4[m
+Author: vane_bustillos <vanebustillos1@gmail.com>
+Date:   Sun Oct 27 22:02:08 2019 -0400
+
+    corrección errores
+
+[33mcommit 250ebb4aaaa94b7747ff8c37c6555c052a22bb57[m
+Author: pablin2402 <pabloperedo04@gmail.com>
+Date:   Sun Oct 27 21:45:39 2019 -0400
+
+    Mapa funcionando correctamente
+
+[33mcommit f73a18f60488681edda33a65a2c639e8aa29b23a[m
+Author: vane_bustillos <vanebustillos1@gmail.com>
+Date:   Sun Oct 27 21:37:43 2019 -0400
+
+    Opción de contacto funcionando
+
+[33mcommit 348850e42231e9f62cadadbbd605d5ad73a15aef[m
+Author: vane_bustillos <vanebustillos1@gmail.com>
+Date:   Sun Oct 27 21:11:11 2019 -0400
+
+    corrigiendo contacto.html
+
+[33mcommit ab8990949844de19762bdc2d3e365725946b63f0[m
+Author: vane_bustillos <vanebustillos1@gmail.com>
+Date:   Sun Oct 27 20:26:50 2019 -0400
+
+    Creando opción Contacto
+
+[33mcommit 6ae23f2670904ad3ec4d659502c2c37e6fb4c287[m
+Author: pablin2402 <pabloperedo04@gmail.com>
+Date:   Sun Oct 27 15:16:18 2019 -0400
+
+    pablo
+
+[33mcommit ec17b85a28a87db574e9b29c763e80559a45e62d[m
+Author: pablin2402 <pabloperedo04@gmail.com>
+Date:   Sat Oct 26 23:18:01 2019 -0400
+
+    Vista productos, intento fallido MAPAS
+
+[33mcommit 31cf7007e7011dbeeef76e44dedb59cb4a57935a[m
+Author: pablin2402 <pabloperedo04@gmail.com>
+Date:   Sat Oct 26 20:02:16 2019 -0400
+
+    Eliminar producto
+
+[33mcommit 4791f282a391491ff5a87324cb7eaedb0407f34c[m
+Author: pablin2402 <pabloperedo04@gmail.com>
+Date:   Fri Oct 25 22:35:14 2019 -0400
+
+    Ingresar producto
+
+[33mcommit b03c06b8459210758bf6cd6e2a278acb53d549c1[m
+Author: pablin2402 <pabloperedo04@gmail.com>
+Date:   Fri Oct 25 14:54:43 2019 -0400
+
+    Mostrar Productos y Login
+
+[33mcommit 4302f86b2361ef0c0b21a9789a423a0193bc7d9f[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: pablin2402 <pabloperedo04@gmail.com>
+Date:   Thu Oct 24 21:09:09 2019 -0400
+
+    first commit

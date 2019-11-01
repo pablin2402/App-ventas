@@ -1,0 +1,49 @@
+<div class="card text-center">
+          
+
+    <div class="card-body">
+          
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                    <img class="img-fluid" src="{{books.portada}}" alt="{{books.nombre}}">
+            </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                      <div class="jumbotron">
+                          <h4 class="display-4">{{books.nombre}}</h4>
+                          
+                          <p class="lead">de {{books.marca}}</p>
+                          <hr class="my-4"> 
+                      </div>
+                      <div class="card border-warning mb-3" style="max-width: 18rem;">
+                          <div class="card-header">Precio</div>
+                            <p class="card-text">{{books.precio}} Bs.</p>
+                          </div>
+                        </div>
+                     <p class="card-text">
+                        
+                        {{books.descripcion}}
+                      
+                    </p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="jumbotron">
+                <h4 class="card-title" >Ingredientes</h4>
+                
+                <p class="lead"> {{books.ingredientes}}</p>
+                  <hr class="my-4">
+                  <h5 class="card-title" >Alérgenos</h5>
+                  
+                  <p>{{books.Alergenos}}</p>
+                  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                </div>
+              <div class="card-footer text-muted">
+                  
+                  © 2019, Dev-Thinking.com, Inc. o afiliados. Todos los derechos reservados.
+              </div>
+          </div>
+  
+          

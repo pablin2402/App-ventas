@@ -3,13 +3,10 @@ import { AuthService } from "../services/auth.service";
 import { AngularFireAuth} from '@angular/fire/auth';
 import { Cart } from "../model/cart";
 import { Galleta } from "../model/galleta";
-import { Product } from "../model/product";
 import { AngularFirestore } from 'angularfire2/firestore';
 
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 
 export class CartService
 {
@@ -143,7 +140,7 @@ export class CartService
 
   }
 
-  static totalProductsInCart(products: Product[])
+  static totalProductsInCart(products: Galleta[])
   {
 
     let sum = 0;
@@ -154,7 +151,7 @@ export class CartService
 
   }
 
-  totalPrice(products: Product[]): number
+  totalPrice(products: Galleta[]): number
   {
 
     let total = 0;

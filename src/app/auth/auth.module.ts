@@ -6,17 +6,20 @@ import { SharedModule } from "../shared/shared.module";
 import { AngularFireAuthModule } from "angularfire2/auth";
 //import { FormComponent } from './form/form.component';
 import { AuthGuard } from '../guards/auth.guard';
+import { CustomerGuard } from './customer.guard';
+import { RegistroComponent } from '../components/registro/registro.component';
+import { LoginComponent } from '../components/login/login.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [RegistroComponent, LoginComponent,],
   imports: [
     CommonModule,
     AuthRoutingModule,
     AngularFireAuthModule,
     SharedModule
   ],
-  providers: [AuthService, AuthGuard]
+  providers: [AuthService, AuthGuard, CustomerGuard]
 })
 
 export class AuthModule { }

@@ -1,13 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-//import { AppService, ProductsService, CartService, SnackService } from '../common';
 import { AppService } from '../common/app.service';
 import { SnackService } from '../common/snack.service';
 import { ProductsService } from '../common/products.service';
 import { CartService } from '../common/cart.service';
-//import { OrdersService } from '../common/orders.service';
-
+import { OrdersService } from '../common/orders.service';
 
 import{
   MatButtonModule,
@@ -64,6 +62,6 @@ import{
     MatTabsModule,
     MatProgressSpinnerModule
   ],
-  providers: [AppService, SnackService, CartService, ProductsService]
+  providers: [AppService, SnackService, CartService, ProductsService, OrdersService]
   })
 export class SharedModule { }

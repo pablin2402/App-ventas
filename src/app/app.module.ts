@@ -31,6 +31,7 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { DetailsBookComponent } from './components/details-book/details-book.component';
+import { CompraComponent } from './components/compra/compra.component';
 //import { AdminComponent } from './admin/admin/admin.component';
 
 //Modulos
@@ -47,12 +48,17 @@ export const firebaseConfig =environment.firebaseConfig;
 import { environment } from "../environments/environment";
 
 import { importExpr } from '@angular/compiler/src/output/output_ast';
+
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFirestore }from '@angular/fire/firestore';
 import { AngularFirestoreModule } from "angularfire2/firestore";
+
+
+import { ListcookiesComponent } from './components/listcookies/listcookies.component';
+import { DetailsCookieComponent } from './components/details-cookie/details-cookie.component';
 
 const MaterialComponents = [
   MatButtonModule
@@ -62,9 +68,11 @@ const MaterialComponents = [
 @NgModule({
   declarations: [
     AppComponent,
+    ListcookiesComponent,
     ProfileComponent,
     HeaderComponent,
     UserComponent,
+    DetailsCookieComponent,
     FooterComponent,
     ConfiguracionesComponent,
     AddBookComponent,
@@ -78,8 +86,12 @@ const MaterialComponents = [
     NavTabsComponent,
     AboutusComponent,
     ContactoComponent,
+
+    CompraComponent,
+    
+
     CarritoComponent
-  //  AdminComponent
+ 
   ],
   imports: [
     BrowserModule,
@@ -101,7 +113,7 @@ const MaterialComponents = [
     AngularFireDatabaseModule,
     FlexLayoutModule,
     AgmCoreModule.forRoot({
-        apiKey: 'API'
+        apiKey: 'API KEY'
     }),
     BrowserAnimationsModule,
     ReactiveFormsModule,
