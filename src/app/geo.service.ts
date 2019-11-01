@@ -38,9 +38,6 @@ export class GeoService {
           currentHits.push(hit)
           this.hits.next(currentHits)
        })
-    }
-
-  
-      
+    }    
    }
 

@@ -18,6 +18,6 @@ import { UploadService } from './upload.service';
 
   declarations: [AdminComponent, ProductsDialogComponent, ProductsComponent, UploadFormComponent],
   entryComponents: [ProductsDialogComponent],
-  providers: [UploadService]
+  providers: [/*UploadService*/]
 })
 export class AdminModule { }

@@ -34,9 +34,7 @@
   *ngIf="user.role === 'admin' && data.id">
     <div>
 
-      < app-upload-form [id]="data.id"/>
-    <!--  </app-upload-form>-->
-
+      <app-upload-form [id]="data.id"></app-upload-form>
       <mat-grid-list cols="2">
         <mat-grid-tile *ngFor="let upload of uploads | async">
           <img width="150" [src]="upload.url"

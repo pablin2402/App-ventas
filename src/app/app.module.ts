@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -59,6 +58,9 @@ import { AngularFirestoreModule } from "angularfire2/firestore";
 
 import { ListcookiesComponent } from './components/listcookies/listcookies.component';
 import { DetailsCookieComponent } from './components/details-cookie/details-cookie.component';
+import { OrdersComponent } from './shop/orders/orders.component';
+import { ProductComponent } from './shop/product/product.component';
+import { ProductsComponent } from './shop/products/products.component';
 
 const MaterialComponents = [
   MatButtonModule
@@ -72,6 +74,7 @@ const MaterialComponents = [
     ProfileComponent,
     HeaderComponent,
     UserComponent,
+    CompraComponent,
     DetailsCookieComponent,
     FooterComponent,
     ConfiguracionesComponent,
@@ -80,23 +83,31 @@ const MaterialComponents = [
     HomeComponent,
     GoogleMapComponent,
     ModalComponent,
+    NavTabsComponent,
+    ContactoComponent,
+    AboutusComponent,
     DetailsBookComponent,
     RegistroComponent,
     LoginComponent,
-    NavTabsComponent,
-    AboutusComponent,
-    ContactoComponent,
-
-    CompraComponent,
-    
-
+    OrdersComponent,
+    ProductComponent,
+    ProductsComponent,
     CarritoComponent
  
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     SharedModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    AngularFireDatabaseModule,
+    FlexLayoutModule,
+    AgmCoreModule.forRoot({apiKey: 'API KEY'}),
+    AuthModule,
+    AdminModule,
+    ShopModule,
     MatSliderModule,
     CustommaterialModule,
     HttpClientModule,
@@ -108,19 +119,8 @@ const MaterialComponents = [
     MatListModule,
     MatTabsModule,
     MatSnackBarModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule,
-    AngularFireDatabaseModule,
-    FlexLayoutModule,
-    AgmCoreModule.forRoot({
-        apiKey: 'API KEY'
-    }),
-    BrowserAnimationsModule,
     ReactiveFormsModule,
-    FormsModule,
-    AuthModule,
-    AdminModule,
-    ShopModule
+    FormsModule
   ],
   exports: [
     MatListModule,
@@ -133,6 +133,7 @@ const MaterialComponents = [
     MaterialComponents
   ],
   providers: [AngularFireAuth, AngularFirestore],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }

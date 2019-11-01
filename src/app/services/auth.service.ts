@@ -69,8 +69,6 @@ export class AuthService {
       return this.afsAuth.authState.pipe(map(auth => auth));
   }
 
-  /////////
-
     private oAuthLogin(provider) {
       return this.afsAuth.auth.signInWithPopup(provider).then(credentials => {
         const user = credentials.user;
@@ -124,6 +122,5 @@ export class AuthService {
     })
 
   }
-  //////////
 
 }

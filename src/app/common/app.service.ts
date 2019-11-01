@@ -3,8 +3,10 @@ import { Observable } from "rxjs/Observable";
 import 'rxjs/add/observable/of';
 import { of } from 'rxjs';
 
+@Injectable({
+  providedIn: 'root'
+})
 
-@Injectable()
 
 export class AppService {
 //Preloader
