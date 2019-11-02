@@ -5,11 +5,17 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './nav-tabs.component.html',
   styleUrls: ['./nav-tabs.component.css']
 })
+
 export class NavTabsComponent implements OnInit {
 
-  constructor() { }
+  constructor()
+  {
 
-  ngOnInit() {
+  }
+
+  ngOnInit()
+  {
+    
   }
 
 }

@@ -1,33 +1,29 @@
 <div class="navtabs-container">
    <nav mat-tab-nav-bar  mat-align-tabs="center" fxFlex fxLayout fxLayoutAlign="center center" style="background-color:#bde5ce;">
-    
+
     <a mat-tab-link routerLink="/"
     routerLinkActive #home="routerLinkActive"
-    [active]="home.isActive"> 
-    Home
+    [active]="home.isActive" class="text-center" aria-hidden="true">
+     Inicio
     </a>
 
-    <a mat-tab-link routerLink="/addbook"
-    routerLinkActive #configuraciones="routerLinkActive"
-    [active]="configuraciones.isActive"> 
-    Listar Productos
-    </a>
     <a mat-tab-link routerLink="/cookies"
     routerLinkActive #configuraciones="routerLinkActive"
-    [active]="configuraciones.isActive"> 
-      Nuestro Productos
-    </a>
 
-    <a mat-tab-link routerLink="/registro"
+    [active]="configuraciones.isActive" class="text-center" aria-hidden="true"> 
+      Nuestros Productos
+    </a>
+    
+    <a mat-tab-link routerLink="/carritoNuevo"
     routerLinkActive #configuraciones="routerLinkActive"
-    [active]="configuraciones.isActive"> 
-    Registro
+    [active]="configuraciones.isActive" class="text-center">
+      Carrito 
     </a>
     <a mat-tab-link routerLink="/contacto"
     routerLinkActive #contacto="routerLinkActive"
-    [active]="contacto.isActive"> 
-    Contacto
+    [active]="contacto.isActive" class="text-center" aria-hidden="true">
+      Contacto
     </a>
   </nav>
- 
+
 </div>

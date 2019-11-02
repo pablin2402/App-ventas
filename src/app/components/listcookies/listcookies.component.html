@@ -12,7 +12,7 @@
                       </p>
                       <h4 routerLink="/galleta/{{book.id}}" class="card-title">{{book.nombre}}</h4>
                       <p class="card-text">
-                        {{book.descripcioncorta }}
+                        {{book.descripcioncorta}}
                       </p>
                       <div class="container-precio-idioma">
                         <p class="badge badge-info">
@@ -23,8 +23,8 @@
                           {{book.peso}}
                         </p>
                       </div>
-                        <!-- <button type="submit" class="btn btn-block btn-primary" target="_blank">Comprar</button>-->
-                      <a href="{{book.link_amazon}}" class="btn btn-block btn-primary" target="_blank">Buy</a>
+                        <button type="submit" class="btn btn-block btn-primary" target="_blank" routerLink="/carritoNuevo">Comprar</button>
+                      <!--<button type="submit" class="btn btn-block btn-primary" target="_blank" (click)="addCarrito(book)">Buy</button>-->
                     </div>
                   </div>
                 </div>
@@ -32,3 +32,5 @@
             </div>
           </div>
         </section>
+        <br><br>
+  

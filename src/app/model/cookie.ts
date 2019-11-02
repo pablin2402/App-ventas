@@ -11,5 +11,6 @@ export interface CookieInterface{
     id?: string;
     userUid?: string;
     descripcioncorta?: string;
+    fondo?:string;
 
 }

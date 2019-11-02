@@ -10,15 +10,17 @@ import { fallIn, moveIn } from './router.animation';
   animations:[moveIn(),fallIn()],
   host: {'[@moveIn': ''}
 })
-export class AboutusComponent implements OnInit {
+
+export class AboutusComponent implements OnInit
+{
 
   //books: AngularFireList<any[]>;
   allBooks: any;
   state: string = '';
 
- 
+  ngOnInit()
+  {
 
-  ngOnInit() {  
   }
 
 }

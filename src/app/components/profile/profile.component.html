@@ -1,24 +1,30 @@
 <section id="profile" class="container">
     <div class="row mt-5">
+
       <div class="offset-lg-4 col-lg-4 col-sm-6 col-12 main-section text-center card">
-        <div class="row">
-          <div class="col-lg-12 col-sm-12 col-12 profile-header"></div>
-        </div>
+
         <div class="row user-details">
           <div class="col-12">
-            <h2>Mi Perfil</h2>
+            
+
+            <h2 class="card-title">Mi Perfil</h2>
             <h3></h3>
             <h4></h4>
+            <img src="https://pixabay.com/get/5fe7d6474c52b108f5d08460825668204022dfe05453774c702e78d7/blank-profile-picture-973460_1280.png" class="card-img-top rounded-circle img-thumbnail" >
+
 
             <h5 *ngIf="providerId != 'password'">{{user.name}}</h5>
-            <p>
+
+            <p class="card-text">
               {{user.email}}
             </p>
   
             <hr>
-            <!--span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores suscipit itaque minima quae.</span-->
+            <footer class="blockquote-footer"> © 2019, Dev-Thinking.com, Inc. o afiliados. Todos los derechos reservados.
+                <cite title="Source Title">Mi Perfil.</cite></footer>
           </div>
         </div>
       </div>
     </div>
   </section>
+ 

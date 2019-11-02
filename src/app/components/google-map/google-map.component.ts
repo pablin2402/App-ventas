@@ -11,14 +11,19 @@ import { MouseEvent } from '@agm/core';
   templateUrl: './google-map.component.html',
   styleUrls: ['./google-map.component.css']
 })
-export class GoogleMapComponent implements OnInit {
+
+export class GoogleMapComponent implements OnInit
+{
 
   title = 'My first AGM project';
   
   //zoom:number=16;
   //markers:any;
 
-  constructor(private geo: GeoService) { }
+  constructor(private geo: GeoService)
+  {
+
+  }
 
   ngOnInit() {
     
@@ -85,5 +90,6 @@ export class GoogleMapComponent implements OnInit {
     iconUrl: string;
     
   }
+
 
 

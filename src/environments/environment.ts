@@ -11,7 +11,7 @@ export const environment = {
     fblink:'https://www.facebook.com/'
 
   },
-  
+
   firebaseConfig: {
 
     apiKey: "AIzaSyAzVT1fQaGuijaxX6E2tciN0OmXiRhJm-8",
@@ -24,7 +24,5 @@ export const environment = {
     measurementId: "G-Y3GHYT9Q41"
   },
 
-  googleMapsKey:'AIzaSyDmPQrfklKHKfqwIOuQZ92Q7G0TW0AYZG8'
+    googleMapsKey:'AIzaSyDmPQrfklKHKfqwIOuQZ92Q7G0TW0AYZG8'
 };
-
-

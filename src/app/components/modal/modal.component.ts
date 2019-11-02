@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataApiService } from '../../services/data-api.service';
-import { GalletaInterface } from '../../model/galleta';
+import { Galleta } from '../../model/galleta';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -8,15 +8,21 @@ import { NgForm } from '@angular/forms';
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.css']
 })
+
 export class ModalComponent implements OnInit {
 
   constructor(private dataApi: DataApiService) { }
 
-  ngOnInit() {
+  ngOnInit()
+  {
+
   }
 
-  onSaveBook(bookForm: NgForm): void {
+  onSaveBook(bookForm: NgForm): void
+  {
+
    this.dataApi.addBook(bookForm.value);
+
   }
 
 }

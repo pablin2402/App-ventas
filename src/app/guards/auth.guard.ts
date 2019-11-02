@@ -1,16 +1,27 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, CanActivateChild, CanLoad, Route, UrlSegment, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree,Router } from '@angular/router';
 import { Observable, from } from 'rxjs';
-import{AngularFireAuth}from'@angular/fire/auth';
+import{ AngularFireAuth}from'@angular/fire/auth';
 import{take,map,tap} from 'rxjs/operators';
 import { auth } from 'firebase';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/take';
+import { AuthService} from '../services/auth.service';
+
+
 @Injectable({
   providedIn: 'root'
 })
 
 export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
 
-  constructor(private afsAuth: AngularFireAuth, private router:  Router){
+  constructor(
+    private afsAuth: AngularFireAuth,
+    private router:  Router,
+    private auth: AuthService
+  )
+  {
 
   }
 
