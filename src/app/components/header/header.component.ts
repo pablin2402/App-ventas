@@ -5,6 +5,7 @@ import{ AngularFireAuth } from '@angular/fire/auth';
 import { AuthService } from '../../services/auth.service';
 import {MatDialog} from '@angular/material/dialog';
 import {ProfileComponent}from 'src/app/components/profile/profile.component';
+import{AboutusComponent}from'src/app/components/aboutus/aboutus.component';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -49,7 +50,13 @@ export class HeaderComponent  implements OnInit{
       console.log(`Dialog result: ${result}`);
     });
   }
+  open() {
+    const dialogRef = this.dialog.open(AboutusComponent);
 
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
   ngOnInit()
   {
       this.getCurrentUser();

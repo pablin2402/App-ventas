@@ -4,14 +4,17 @@ import { Router } from '@angular/router';
 import { CookieInterface } from '../../model/cookie';
 import { CompraService } from '../../services/compra.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
-
+import { fallIn, moveIn } from '../../router.animation';
 @Component({
   selector: 'app-carrito-nuevo',
   templateUrl: './carrito-nuevo.component.html',
-  styleUrls: ['./carrito-nuevo.component.css']
+  styleUrls: ['./carrito-nuevo.component.css'],
+  animations:[moveIn(),fallIn()],
+  host: {'[@moveIn': ''}
 })
 export class CarritoNuevoComponent implements OnInit {
 
+  state: string = '';
   constructor(private _snackBar: MatSnackBar,private dataApis: CookieService,public dbData: CompraService, public router: Router) { }
 
   public books =[];

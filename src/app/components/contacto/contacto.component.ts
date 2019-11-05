@@ -1,15 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators} from '@angular/forms';
 import { ContactoService} from '../../services/contacto.service';
+import { fallIn, moveIn } from '../../router.animation';
 
 @Component({
   selector: 'app-contacto',
   templateUrl: './contacto.component.html',
-  styleUrls: ['./contacto.component.css']
+  styleUrls: ['./contacto.component.css'],
+  animations:[moveIn(),fallIn()],
+
+  host: {'[@moveIn': ''}
+
 })
 
 export class ContactoComponent implements OnInit
 {
+  state: string = '';
+
 
   createFormGroup()
   {

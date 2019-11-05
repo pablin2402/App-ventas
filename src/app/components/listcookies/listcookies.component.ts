@@ -3,6 +3,7 @@ import { CookieService} from '../../services/cookie.service';
 import { Router } from '@angular/router';
 import { Galleta } from '../../model/galleta';
 import { CookieInterface } from '../../model/cookie';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-listcookies',
@@ -10,12 +11,13 @@ import { CookieInterface } from '../../model/cookie';
   styleUrls: ['./listcookies.component.css']
 })
 export class ListcookiesComponent implements OnInit {
+  durationInSeconds = 5;
 
   @Input()
   searchText: string;
   @Output()
   search: EventEmitter<string> = new EventEmitter();
-  constructor(private dataApis: CookieService, public router: Router) { }
+  constructor(private dataApis: CookieService, public router: Router,private _snackBar: MatSnackBar) { }
 
   public books =[];
   public carrito=[];
@@ -29,8 +31,24 @@ export class ListcookiesComponent implements OnInit {
   }
 
  
+  openSnackBar() {
+    this._snackBar.openFromComponent(PizzaPartyComponent, {
+      duration: this.durationInSeconds * 1000,
+    });
+  }
+  
   onSearch(searchText: string) {
     this.search.emit(searchText);
   }
 
 }
+@Component({
+  selector: 'snack-bar-component-example-snack',
+  templateUrl: 'uno.html',
+  styles: [`
+    .example-pizza-party {
+      color: hotpink;
+    }
+  `],
+})
+export class PizzaPartyComponent {}

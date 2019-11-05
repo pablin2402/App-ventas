@@ -27,4 +27,8 @@ section {
 .carrito h5{
     text-align: right;
 }
-
+.example-card {
+    max-width: 1000px;
+  }
+  
+  
