@@ -5,25 +5,37 @@
       <div class="col-sm-3 carrito">
         
         <br>
-        <h4><i class="fa fa-shopping-cart"></i> Carrito de Compras</h4>
-        <ul class="list-group">
+        <h4 class="card-title"><i class="fa fa-shopping-cart"></i> Carrito de Compras</h4>
+        <ul class="list-group mb-3">
 
-          <li routerLink="/galleta/{{book.id}}" class="list-group-item" *ngFor="let producto of carrito">
-            {{producto.nombre}}
-            <strong class="pull-right">{{producto.precio | currency:'Bs.'}} </strong>
+          <li routerLink="/galleta/{{book.id}}" class="list-group-item d-flex justify-content-between lh-condensed" *ngFor="let producto of carrito">
+            <div>
+                <h6 class="my-0">  {{producto.nombre}}</h6>
+              </div>
+              <span class="text-muted">{{producto.precio | currency:'Bs.'}}</span>
+
+          
+         
+            
           </li>
         </ul>
         <br>
-        <h5> <b> TOTAL:</b> {{total(book)}} Bs.</h5>
+        <li class="list-group-item d-flex justify-content-between">
+            <span>Total (INR)</span>
+            <strong>{{total(book)}} Bs.</strong>
+          </li>
+       
         <br>
         <button type="submit" class="btn btn-block btn-outline-light btn-dark" target="_blank" (click)="irformcomprar(productos_carrito)">Terminar
           Compra
         </button>
         <br>
         
-   
-</div></div>
+        <footer class="blockquote-footer"> © 2019, Dev-Thinking.com, Inc. o afiliados. Todos los derechos reservados.
+          <cite title="Source Title"> Carrito de Compras. </cite></footer>
+    </div>
   </div>
+</div>
 
   <div class="container">
     <div class="row">
@@ -47,9 +59,10 @@
                   {{book.peso}}
                 </p>
               </div>
-
+              
               <button type="submit" class="btn btn-block btn-outline-info btn-link" target="_blank" (click)="addCarrito(book)">Añadir
                 al Carrito</button>
+                
             </div>
           </div>
         </div>

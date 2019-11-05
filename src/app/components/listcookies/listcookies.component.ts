@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Input, Output, EventEmitter} from '@angular/core';
 import { CookieService} from '../../services/cookie.service';
 import { Router } from '@angular/router';
 import { Galleta } from '../../model/galleta';
@@ -11,6 +11,10 @@ import { CookieInterface } from '../../model/cookie';
 })
 export class ListcookiesComponent implements OnInit {
 
+  @Input()
+  searchText: string;
+  @Output()
+  search: EventEmitter<string> = new EventEmitter();
   constructor(private dataApis: CookieService, public router: Router) { }
 
   public books =[];
@@ -20,10 +24,13 @@ export class ListcookiesComponent implements OnInit {
   ngOnInit() {
     this.dataApis.getAllBooks().subscribe(books =>{
       console.log('BOOKS',books);
-      this.books=books;
+        this.books=books;
     })
   }
 
  
+  onSearch(searchText: string) {
+    this.search.emit(searchText);
+  }
 
 }

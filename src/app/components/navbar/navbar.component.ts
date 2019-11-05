@@ -10,10 +10,10 @@ export class NavbarComponent implements OnInit {
 
   @Output() closeSideNavigation = new EventEmitter();
 
-  constructor()
-  {
-    
+ 
+  constructor() {
   }
+
 
   ngOnInit()
   {

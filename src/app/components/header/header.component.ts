@@ -3,8 +3,8 @@ import { fallIn, moveIn} from 'src/app/router.animation';
 import { BackendService } from '../services/backend.service';
 import{ AngularFireAuth } from '@angular/fire/auth';
 import { AuthService } from '../../services/auth.service';
-
-
+import {MatDialog} from '@angular/material/dialog';
+import {ProfileComponent}from 'src/app/components/profile/profile.component';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -38,9 +38,16 @@ export class HeaderComponent  implements OnInit{
     private _backendservice: BackendService,
     private authService: AuthService,
     private afsAuth: AngularFireAuth,
+    public dialog: MatDialog
       )
-  {
+  {}
 
+  openDialog() {
+    const dialogRef = this.dialog.open(ProfileComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
   ngOnInit()
@@ -68,3 +75,4 @@ export class HeaderComponent  implements OnInit{
     this.afsAuth.auth.signOut();
   }
 }
+

@@ -3,6 +3,7 @@ import { CookieService} from '../../services/cookie.service';
 import { Router } from '@angular/router';
 import { CookieInterface } from '../../model/cookie';
 import { CompraService } from '../../services/compra.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-carrito-nuevo',
@@ -11,7 +12,7 @@ import { CompraService } from '../../services/compra.service';
 })
 export class CarritoNuevoComponent implements OnInit {
 
-  constructor(private dataApis: CookieService,public dbData: CompraService, public router: Router) { }
+  constructor(private _snackBar: MatSnackBar,private dataApis: CookieService,public dbData: CompraService, public router: Router) { }
 
   public books =[];
   public carrito=[];
@@ -45,11 +46,12 @@ export class CarritoNuevoComponent implements OnInit {
 
     return total;
   }
-
+  
+ 
   irformcomprar(productos_c:[]):void{
     console.log('CARRITO',this.productos_carrito);
     this.dbData.saveData(productos_c, this.precio_total);
     this.router.navigate(['/comprar']);
   }
-
+  
 }

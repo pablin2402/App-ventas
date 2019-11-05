@@ -23,7 +23,6 @@ export class LoginComponent implements OnInit {
     public afAuth: AngularFireAuth,
     private router: Router,
     public auth: AuthService,
-  /*  public snackService:SnackService,*/
     public afs: AngularFirestore
     )
     {
@@ -51,9 +50,10 @@ export class LoginComponent implements OnInit {
   {
     //this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
     this.auth.loginGoogleUser()
-    .then((res) => {
+    .then((res) => 
+    {
       this.onLoginRedirect();
-        }).catch(err => console.log('err', err.message));
+    }).catch(err => console.log('err', err.message));
 
   }
 
@@ -61,9 +61,10 @@ export class LoginComponent implements OnInit {
   {
 
     this.auth.loginFacebookUser()
-      .then((res) => {
+      .then((res) => 
+      {
         this.onLoginRedirect();
-            }).catch(err => console.log('err', err.message));
+      }).catch(err => console.log('err', err.message));
 
   }
 

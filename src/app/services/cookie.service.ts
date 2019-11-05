@@ -48,6 +48,7 @@ export class CookieService {
       }
     }));
   }
+  
   addBook(book: CookieInterface): void {
     this.booksCollection.add(book);
   }
