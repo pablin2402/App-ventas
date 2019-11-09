@@ -10,8 +10,8 @@ import { NgForm } from '@angular/forms';
 })
 export class AddBookComponent implements OnInit {
 
-  constructor(private dataApi: CookieService) { }
-  private books: CookieInterface[];
+  constructor(public dataApi: CookieService) { }
+  public books: CookieInterface[];
 
   ngOnInit() {
     this.getListBooks();

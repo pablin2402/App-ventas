@@ -5,7 +5,8 @@ export interface WorkerInterface{
     apellido?: string;
     latitud?: string;
     longitud?: string;
-
-    telefono?: string;
+    email?: string;
+    telf?: string;
+    ci?:string;
 
 }

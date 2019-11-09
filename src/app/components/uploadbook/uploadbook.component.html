@@ -1,0 +1,137 @@
+<section id="register" class="mb-5 mt-5">
+
+        <div class="container">
+           
+                <div class="card_register">
+        
+                  <div class="card">
+        
+                          <h5 class="card-header">Actualizar Galletas</h5>
+                          <div class="card-body">    
+      
+                      
+                      <form (ngSubmit)="onSaveBook(formBook)" #formBook="ngForm">
+                      
+                            <div class="form-group">
+                                       
+
+                                    <input name="id" type="hidden" [(ngModel)]="this.dataApi.selectedBook.id" placeholder="id" class="form-control">
+                                    
+                                
+                            </div>
+                            <div class="form-group">
+                            
+                                <label for="nombre">Nombre </label>
+        
+                                <input type="text"  name="nombre" placeholder="Nombre Galleta" class="form-control" [(ngModel)]="this.dataApi.selectedBook.nombre">
+                                
+                                
+                                
+                            </div>
+      
+                        
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="peso">Peso</label>
+      
+                                 <input type="text"  name="peso" class="form-control" placeholder=" 0.0 g" [(ngModel)]="this.dataApi.selectedBook.peso">
+                                 
+      
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="oferta">Marca</label>
+      
+                                 <input type="texto" name="marca" class="form-control" placeholder=" Marca " [(ngModel)]="this.dataApi.selectedBook.marca">
+                                 
+                            </div>
+                        </div> 
+                      
+      
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="oferta">Oferta</label>
+      
+                                   <select type="text"  name="oferta" class="form-control" placeholder="Oferta" [(ngModel)]="this.dataApi.selectedBook.oferta">
+                                    <option value="1">Sí</option>
+                                    <option value="0">No</option>
+                                    </select>
+                                    
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="oferta">Imagen de Portada</label>
+                                <input type="search"  name="portada" class="form-control" placeholder=" Imagen de Portada " [(ngModel)]="this.dataApi.selectedBook.portada">                                                <small id="emailHelp" class="form-text text-muted">No compartiremos tu dirección de correo electrónico con nadie.</small>
+                                <small id="emailHelp" class="form-text text-muted">La Imagen de Portada debe ser el link de una imagen de 400 x 400.</small>
+      
+                                <small id="emailHelp" class="form-text text-muted">Esta imagen será mostrada en la lista general de productos.</small>
+      
+                               
+                            </div>
+                        </div>
+        
+                           
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="oferta">Fondo de la pantalla Productos</label>
+      
+                                <input type="search" name="fondo" class="form-control" placeholder=" Fondo de la pantalla Productos " [(ngModel)]="this.dataApi.selectedBook.fondo">                                                <small id="emailHelp" class="form-text text-muted">No compartiremos tu dirección de correo electrónico con nadie.</small>
+                                <small id="emailHelp" class="form-text text-muted">La Imagen debe ser el link de una imagen de 2000 x 1000.</small>
+      
+                            </div>
+      
+                            <div class="form-group col-md-6">
+                                <label for="oferta">Imagen de Portada</label>
+                                <input type="search"  name="imagen" class="form-control" placeholder=" Imagen del Producto " [(ngModel)]="this.dataApi.selectedBook.imagen">                                                <small id="emailHelp" class="form-text text-muted">No compartiremos tu dirección de correo electrónico con nadie.</small>
+                                <small id="emailHelp" class="form-text text-muted">La Imagen debe ser el link de una imagen de 700 x 700.</small>
+      
+                                <small id="emailHelp" class="form-text text-muted">Esta imagen será mostrada al lado derecho de los datos completos de cada producto.</small>
+      
+                               
+                            </div>
+                        </div>
+        
+                        <div class="form-group">
+                            <label for="descripcion">Descripcion del Producto</label>
+      
+                            <textarea  name="descripcion" placeholder="Descripcion"class="form-control" [(ngModel)]="this.dataApi.selectedBook.descripcion"></textarea>
+                          
+                        </div>
+                        <div class="form-group">
+                            <label for="descripcioncorta">Descripcion Corta</label>
+      
+                          <textarea name="descripcioncorta" placeholder="Descripcion Corta"class="form-control"[(ngModel)]="this.dataApi.selectedBook.descripcioncorta"></textarea>
+                        
+                        </div>
+                        <div class="form-group">
+                            <label for="ingredientes">Ingredientes</label>
+      
+                          <textarea  placeholder="Ingredientes" name="ingredientes" class="form-control"[(ngModel)]="this.dataApi.selectedBook.ingredientes"></textarea>
+                         
+                        </div>
+                        <div class="form-group">
+                            <label for="Alergenos">Alergenos</label>
+      
+                          <textarea  name="Alergenos" placeholder="Alergenos"class="form-control" [(ngModel)]="this.dataApi.selectedBook.Alergenos"></textarea>
+                        </div>
+                      <div class="form-group ">
+                          <label for="oferta">Precio</label>
+                          <input type="number"  name="precio" class="form-control" placeholder=" 0.00 Bs."[(ngModel)]="this.dataApi.selectedBook.precio">
+                          
+                         
+                             
+                           
+                    </div>
+
+
+                        
+      
+                        <button class="btn btn-lg btn-primary btn-block" type="submit"   >Guardar</button>
+                        <BR>
+                        <br>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit"routerLink="/addbook">Salir</button>
+                    </form>
+          </div>
+      
+        </div>
+        </div>
+        </div>
+        </section>

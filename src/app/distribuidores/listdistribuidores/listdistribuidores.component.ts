@@ -9,7 +9,7 @@ import { DistribuidorInterface } from '../../model/distribuidor';
 export class ListdistribuidoresComponent implements OnInit {
 
   constructor(private dataApi: DistribuidorService) { }
-  private books: DistribuidorInterface[];
+  public books: DistribuidorInterface[];
   ngOnInit() 
   {
     this.getListBooks();

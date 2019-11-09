@@ -15,12 +15,17 @@ export class AddcookieComponent implements OnInit {
       Alergenos: new FormControl(''),
       descripcion: new FormControl('', [Validators.required, Validators.minLength(40)]),
       descripcioncorta: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(100)]),
-      ingredientes: new FormControl('',[Validators.required, Validators.minLength(10), Validators.maxLength(30)]),
+      ingredientes: new FormControl('',[Validators.required, Validators.minLength(10)]),
       marca: new FormControl('', [Validators.required, Validators.minLength(1)]),
       nombre: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
-      oferta: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
+      oferta: new FormControl('', [Validators.required, Validators.minLength(1)]),
       peso: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
-      portada: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(100)])
+      portada: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(100)]),
+     //-------------------------------------------------------------------------------------------------
+      fondo: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(100)]),
+      imagen: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(100)]),
+
+      precio: new FormControl('', [Validators.required, Validators.minLength(1)])
 
 
     });
@@ -57,6 +62,9 @@ export class AddcookieComponent implements OnInit {
  
   
   get nombre() { return this.contactsForm.get('nombre'); }
+  get fondo() { return this.contactsForm.get('fondo'); }
+  get imagen() { return this.contactsForm.get('imagen'); }
+
   get marca() { return this.contactsForm.get('marca'); }
   get peso() { return this.contactsForm.get('peso'); }
   get oferta() { return this.contactsForm.get('oferta'); }
@@ -65,6 +73,7 @@ export class AddcookieComponent implements OnInit {
   get descripcioncorta() { return this.contactsForm.get('descripcioncorta'); }
   get ingredientes() { return this.contactsForm.get('ingredientes'); }
   get Alergenos() { return this.contactsForm.get('Alergenos'); }
+  get precio() { return this.contactsForm.get('precio'); }
 
 }  
 

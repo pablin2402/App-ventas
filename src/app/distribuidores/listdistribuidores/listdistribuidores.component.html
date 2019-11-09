@@ -1,15 +1,19 @@
 <section class="row mt-5">
-    <div class="col">
-      <button class="btn btn-primary float-right mb-3" data-toggle="modal"
-      routerLink="/distribuidores">Nueva Distribuidor</button>
+    <div class="col">          
+        <h2 class="card-header">Distribuidores</h2>
+      <br>
+
+      <button class="btn btn-primary float-right mb-3" 
+      routerLink="/distribuidores">Nuevo Distribuidor</button>
+      <br>
       <table class="table table-hover">
         <thead>
           <tr>
             <th scope="col">#</th>
             <th scope="col">Nombre</th>
-            <th scope="col">Correo</th>
-            <th scope="col">Pais</th>
-            <th scope="col">Telefono</th>
+            <th scope="col">Correo Electrónico</th>
+            <th scope="col">País</th>
+            <th scope="col">Teléfono</th>
             <th scope="col">Longitud</th>
             <th scope="col">Latitud</th>
            
@@ -32,8 +36,7 @@
 
             
               <td>
-                <button class="btn btn-secondary" data-toggle="modal"
-                data-target="#modalBook" (click)="onPreUpdateBook(book)">Actualizar</button>
+                <button class="btn btn-secondary"(click)="onPreUpdateBook(book)"routerLink="/actualizar">Actualizar</button>
               </td>
            
             
@@ -48,4 +51,3 @@
     </div>
    
   </section>
-<app-modal></app-modal>

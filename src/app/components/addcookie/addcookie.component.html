@@ -1,19 +1,19 @@
 <section id="register" class="mb-5 mt-5">
 
   <div class="container">
-      <div class="row">
-  
-        <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+     
           <div class="card_register">
   
             <div class="card">
-                <div class="card-body text-center">
   
-                <h1 class="h3 mb-3 font-weight-normal"> Registrar Galletas</h1>
+                    <h5 class="card-header">Registrar Galletas</h5>
+                    <div class="card-body">    
+
                 
                 <form [formGroup]="contactsForm" (ngSubmit)="onSaveForm()">
                 
                   <div class="form-group">
+                    
                       <label for="nombre">Nombre </label>
 
                        <input type="text" formControlName="nombre" placeholder="Nombre Galleta" class="form-control">
@@ -69,15 +69,18 @@
                            </div>
                       </div>
                       <div class="form-group col-md-6">
-                          <label for="oferta">Portada</label>
-                          <input type="search" formControlName="portada" name="portada" class="form-control" placeholder=" Portada ">
-                          
+                          <label for="oferta">Imagen de Portada</label>
+                          <input type="search" formControlName="portada" name="portada" class="form-control" placeholder=" Imagen de Portada ">                                                <small id="emailHelp" class="form-text text-muted">No compartiremos tu dirección de correo electrónico con nadie.</small>
+                          <small id="emailHelp" class="form-text text-muted">La Imagen de Portada debe ser el link de una imagen de 400 x 400.</small>
+
+                          <small id="emailHelp" class="form-text text-muted">Esta imagen será mostrada en la lista general de productos.</small>
+
                           <div class="alert-danger" *ngIf="portada.invalid && (portada.dirty || portada.touched)">
                             <div class="container-error-message" *ngIf="portada.errors.required">
-                               La portada es obligatoria.
+                               La Imagen de Portada es obligatoria.
                              </div>
                              <div class="container-error-message" *ngIf="portada.errors.minlength">
-                              La portada debe ser un link 10.
+                              La imagen debe ser un link 10.
                            </div>
                            
                        </div>
@@ -85,35 +88,69 @@
                   </div>
   
                      
-                  <div class="form-group">
-                      <label for="descripcion">Descripcion del Producto</label>
+                  <div class="form-row">
+                      <div class="form-group col-md-6">
+                          <label for="oferta">Fondo de la pantalla Productos</label>
 
-                      <textarea formControlName="descripcion" placeholder="Descripcion"class="form-control"></textarea>
+                          <input type="search" formControlName="fondo" name="fondo" class="form-control" placeholder=" Fondo de la pantalla Productos ">                                                <small id="emailHelp" class="form-text text-muted">No compartiremos tu dirección de correo electrónico con nadie.</small>
+                          <small id="emailHelp" class="form-text text-muted">La Imagen debe ser el link de una imagen de 2000 x 1000.</small>
+
+                              <div class="alert-danger" *ngIf="fondo.invalid && (fondo.dirty || fondo.touched)">
+                                <div class="container-error-message" *ngIf="fondo.errors.required">
+                                  Este campo es obligatorio.
+                                 </div>
+                                 
+                           </div>
+                      </div>
+
+                      <div class="form-group col-md-6">
+                          <label for="oferta">Imagen de Portada</label>
+                          <input type="search" formControlName="imagen" name="imagen" class="form-control" placeholder=" Imagen del Producto ">                                                <small id="emailHelp" class="form-text text-muted">No compartiremos tu dirección de correo electrónico con nadie.</small>
+                          <small id="emailHelp" class="form-text text-muted">La Imagen debe ser el link de una imagen de 700 x 700.</small>
+
+                          <small id="emailHelp" class="form-text text-muted">Esta imagen será mostrada al lado derecho de los datos completos de cada producto.</small>
+
+                          <div class="alert-danger" *ngIf="imagen.invalid && (imagen.dirty || imagen.touched)">
+                            <div class="container-error-message" *ngIf="imagen.errors.required">
+                              Este campo es obligatorio
+                             </div>
+                             <div class="container-error-message" *ngIf="imagen.errors.minlength">
+                              La imagen debe ser un link 10.
+                           </div>
+                           
+                       </div>
+                      </div>
+                  </div>
+  
+                  <div class="form-group">
+                      <label for="descripcion">Descripción del Producto</label>
+
+                      <textarea formControlName="descripcion" placeholder="Descripción del Producto"class="form-control"></textarea>
                       <div class="alert-danger" *ngIf="descripcion.invalid && (descripcion.dirty || descripcion.touched)">
                         <div class="container-error-message" *ngIf="descripcion.errors.required">
-                            La descripcion del Producto es obligatoria.
+                            La descripción del Producto es obligatoria.
                         </div>
                          <div class="container-error-message" *ngIf="descripcion.errors.minlength">
-                            La descripcion minimamente debe tener 40 caracteres.
+                            La descripción mínimamente debe tener 40 caracteres.
                          </div>
                          <div class="container-error-message" *ngIf="descripcion.errors.maxLength">
-                          La descripcion  debe tener menos de 100 caracteres.
+                          La descripción  debe tener menos de 100 caracteres.
                        </div>
                    </div>
                     </div>
                   <div class="form-group">
-                      <label for="descripcioncorta">Descripcion Corta</label>
+                      <label for="descripcioncorta">Descripción Corta</label>
 
-                    <textarea formControlName="descripcioncorta" placeholder="Descripcion Corta"class="form-control"></textarea>
+                    <textarea formControlName="descripcioncorta" placeholder="Descripción Corta"class="form-control"></textarea>
                     <div class="alert-danger" *ngIf="descripcioncorta.invalid && (descripcioncorta.dirty || descripcioncorta.touched)">
                       <div class="container-error-message" *ngIf="descripcioncorta.errors.required">
-                          La descripcion corta del Producto es obligatoria.
+                          La descripción corta del Producto es obligatoria.
                       </div>
                        <div class="container-error-message" *ngIf="descripcioncorta.errors.minlength">
-                          La descripcion minimamente debe tener 10 caracteres.
+                          La descripción mínimamente debe tener 10 caracteres.
                        </div>
                        <div class="container-error-message" *ngIf="descripcioncorta.errors.maxLength">
-                        La descripcion minimamente debe tener menos de 30 caracteres.
+                        La descripción mínimamente debe tener menos de 30 caracteres.
                      </div>
                  </div>
                   </div>
@@ -132,18 +169,29 @@
                  </div>
                   </div>
                   <div class="form-group">
-                      <label for="Alergenos">Alergenos</label>
+                      <label for="Alergenos">Alérgenos</label>
 
-                    <textarea formControlName="Alergenos" placeholder="Alergenos"class="form-control"></textarea>
+                    <textarea formControlName="Alergenos" placeholder="Alérgenos"class="form-control"></textarea>
                   </div>
-            
+                <div class="form-group ">
+                    <label for="oferta">Precio</label>
+                    <input type="number" formControlName="precio" name="portada" class="form-control" placeholder=" 0.00 Bs.">
+                    
+                    <div class="alert-danger" *ngIf="precio.invalid && (precio.dirty || precio.touched)">
+                      <div class="container-error-message" *ngIf="precio.errors.required">
+                         El precio es obligatorio
+                       </div>
+                       
+                     
+                   </div>
+              </div>
+
                   <button class="btn btn-lg btn-primary btn-block" type="submit"routerLink="/addbook">Salir</button>
 
                   <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!contactsForm.valid"  >Guardar</button>
       </form>
     </div>
-  </div>
-  </div>
+
   </div>
   </div>
   </div>

@@ -1,10 +1,7 @@
 
-<section id="register" class="mb-5 mt-5">
 
     <div class="container">
-        <div class="row">
-    
-          <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+        
             <div class="card_register">
     
               <div class="card">
@@ -13,32 +10,65 @@
                   
                   <form [formGroup]="contactsForm" (ngSubmit)="onSaveForm()">
                   
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Nombre</label>
- 
-                      <input type="text" formControlName="nombre" placeholder="Ingrese su nombre" class="form-control">
-                         <div class="alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
-                                   <div class="container-error-message" *ngIf="nombre.errors.required">
-                                        Nombre es obligatorio
-                                  </div>
-                         </div>
-                    </div>
-    
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Apellido</label>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
 
-                      <input type="text" formControlName="apellido" name="apellido" class="form-control" placeholder="Ingrese su Apellido">
-                      <div class="alert-danger" *ngIf="apellido.invalid && (apellido.dirty || apellido.touched)">
-                           <div class="container-error-message" *ngIf="apellido.errors.required">
-                                 Apellido es obligatorio
+                              <label for="exampleInputEmail1">Nombre</label>
+      
+                            <input type="text" formControlName="nombre" placeholder="Ingrese su nombre" class="form-control">
+                              <div class="alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+                                        <div class="container-error-message" *ngIf="nombre.errors.required">
+                                              Nombre es obligatorio
+                                        </div>
+                              </div>
+                         </div>
+                         <div class="form-group col-md-6">
+                            <label for="exampleInputEmail1">Apellido</label>
+
+                            <input type="text" formControlName="apellido" name="apellido" class="form-control" placeholder="Ingrese su Apellido">
+                            <div class="alert-danger" *ngIf="apellido.invalid && (apellido.dirty || apellido.touched)">
+                                 <div class="container-error-message" *ngIf="apellido.errors.required">
+                                       Apellido es obligatorio
+                                  </div>
                             </div>
-                      </div>
+                         </div>
                     </div>     
+
+    
+                      
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+
+                      
+                              <label for="exampleInputEmail1">Cédula de Identidad</label>
+        
+                                <input type="number" formControlName="ci" name="ci" class="form-control" placeholder="Cédula de Identidad">
+                                    <div class="alert-danger" *ngIf="ci.invalid && (ci.dirty || ci.touched)">
+                                            <div class="container-error-message" *ngIf="ci.errors.required">
+                                                La Cédula de Identidad es obligatoria.
+                                            </div>
+                                    </div>
+                          </div>
+                          <div class="form-group col-md-6">
+                              <label for="exampleInputEmail1">Teléfono</label>
+
+                              <input type="number" formControlName="telefono" name="telefono" class="form-control" placeholder="Ingrese número de teléfono">
+                              <div class="alert-danger" *ngIf="telefono.invalid && (telefono.dirty || telefono.touched)">
+                                    <div class="container-error-message" *ngIf="telefono.errors.required">
+                                       Teléfono es de cáracter obligatorio
+                                    </div>
+                                    <div class="container-error-message" *ngIf="telefono.errors.minlength">
+                                      El telefono debe tener 7 caracteres
+                                    </div>
+                              </div>
+                          </div>
+                    </div>
+   
 
                     <div class="form-group">
                       <label for="exampleInputEmail1">Dirección de Correo Electrónico</label>
 
-                      <input type="email" formControlName="correo" name="email" class="form-control" placeholder="Ingrese su email">
+                      <input type="email" formControlName="correo" name="email" class="form-control" placeholder="Ingrese su Correo Electrónico">
                       <small id="emailHelp" class="form-text text-muted">No compartiremos tu dirección de correo electrónico con nadie.</small>
        
                       <div class="alert-danger" *ngIf="correo.invalid && (correo.dirty || correo.touched)">
@@ -51,48 +81,39 @@
     
                        
                    
-                  <div class="form-group">
-                        <label for="exampleInputEmail1">Teléfono</label>
+                 
 
-                      <input type="number" formControlName="telefono" name="telefono" class="form-control" placeholder="Ingrese número de telefono">
-                      <div class="alert-danger" *ngIf="telefono.invalid && (telefono.dirty || telefono.touched)">
-                            <div class="container-error-message" *ngIf="telefono.errors.required">
-                               Teléfono es de cáracter obligatorio
-                            </div>
-                            <div class="container-error-message" *ngIf="telefono.errors.minlength">
-                              El telefono debe tener 7 caracteres
-                            </div>
-                      </div>
-                  </div>
+                  <div class="form-row">
+                      <div class="form-group col-md-6">
+                            <label for="exampleInputEmail1">Latitud</label>
 
-                  <div class="form-group">
-                        <label for="exampleInputEmail1">Latitud</label>
-
-                      <input type="number" formControlName="latitud" name="latitud" class="form-control" placeholder="Latitud">
-                          <div class="alert-danger" *ngIf="latitud.invalid && (latitud.dirty || latitud.touched)">
-                              <div class="container-error-message" *ngIf="latitud.errors.required">
-                                  La latitud es obligatoria.
+                          <input type="number" formControlName="latitud" name="latitud" class="form-control" placeholder="Latitud">
+                              <div class="alert-danger" *ngIf="latitud.invalid && (latitud.dirty || latitud.touched)">
+                                  <div class="container-error-message" *ngIf="latitud.errors.required">
+                                      La latitud es obligatoria.
+                                  </div>
+                            
                               </div>
-                         
-                          </div>
-                  </div>
 
-                  <div class="form-group">
-                      <label for="exampleInputEmail1">Longitud</label>
+                       </div>
 
-                        <input type="number" formControlName="longitud" name="longitud" class="form-control" placeholder="Longitud">
-                            <div class="alert-danger" *ngIf="longitud.invalid && (longitud.dirty || longitud.touched)">
-                                    <div class="container-error-message" *ngIf="longitud.errors.required">
-                                        La longitud es obligatoria.
-                                    </div>
-                            </div>
-                  </div>
+                       <div class="form-group col-md-6">
+
+                          <label for="exampleInputEmail1">Longitud</label>
+
+                            <input type="number" formControlName="longitud" name="longitud" class="form-control" placeholder="Longitud">
+                                <div class="alert-danger" *ngIf="longitud.invalid && (longitud.dirty || longitud.touched)">
+                                        <div class="container-error-message" *ngIf="longitud.errors.required">
+                                            La longitud es obligatoria.
+                                        </div>
+                                </div>
+                       </div>
+                    </div>
 
 
                   
               
              
-                <button class="btn btn-lg btn-primary btn-block" type="submit" >Ubicación</button>
 
                 <button class="btn btn-lg btn-primary btn-block" type="reset"  >Limpiar</button>
 
@@ -105,13 +126,11 @@
     </div>
     </div>
     </div>
-    </div>
-    </div>
-    </section>
+ 
 
     <div class="card mb-3">
         <div class="card-body">
-          <h5 class="card-title">Distribuidores</h5>
+          <h5 class="card-title">Vendedores</h5>
           <agm-map [latitude]="lat" [longitude]="lng"
           [latitude]="lat"
           [longitude]="lng"
@@ -131,9 +150,9 @@
             [iconUrl]="m.iconUrl"
             >
               <agm-info-window>
-               <strong>{{m.label}}</strong>
-               {{m.lat}}
-               {{m.lng}}
+               
+               <strong>Latitud:</strong>{{m.lat}}
+               <strong>Longitud: </strong>{{m.lng}}
       
               </agm-info-window>
             </agm-marker>

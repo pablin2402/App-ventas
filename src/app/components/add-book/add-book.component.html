@@ -6,14 +6,16 @@
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Titulo</th>
-                <th scope="col">Descripcion</th>
+                <th scope="col">Título</th>
+                <th scope="col">Descripción</th>
                 <th scope="col">Ingredientes</th>
                 <th scope="col">Precio</th>
                 <th scope="col">Oferta</th>
-                <th scope="col">Alergenos</th>
+                <th scope="col">Alérgenos</th>
                 <th scope="col">Marca</th>
                 <th scope="col">Peso</th>
+                <th scope="col">Fondo</th>
+
                 <th scope="col">&nbsp;</th>
                 <th scope="col">&nbsp;</th>
               </tr>
@@ -30,12 +32,13 @@
                 <td>{{book.Alergenos}}</td>
                 <td>{{book.marca}}</td>
                 <td>{{book.peso}}</td>
+                <td>{{book.fondo}}</td>
 
 
                 
                   <td>
-                    <button class="btn btn-secondary" data-toggle="modal"
-                    data-target="#modalBook" (click)="onPreUpdateBook(book)">Actualizar</button>
+                    <button class="btn btn-secondary"
+                   (click)="onPreUpdateBook(book)"routerLink="/uploadbook">Actualizar</button>
                   </td>
                
                 
@@ -49,4 +52,3 @@
           </table>
         </div>
       </section>
-<app-modal></app-modal>

@@ -5,6 +5,9 @@
     margin: 10px auto;
     background: #f7f7f7;
   }
+  agm-map {
+    height: 600px;
+  }
   
   .form-container h1 {
     background: #43d1af;

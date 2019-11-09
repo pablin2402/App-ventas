@@ -1,0 +1,37 @@
+<section class="row mt-5">
+        <div class="col">          
+            <h2 class="card-header">Atención al Cliente</h2>
+          <br>
+    
+
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Correo Electrónico</th>
+                <th scope="col">Mensaje</th>
+                <th scope="col">Nombre</th>
+               
+              </tr>
+            </thead>
+            <tbody>
+    
+              <tr *ngFor="let book of books; index as i">
+                <th scope="row">{{i+1}}</th>
+                <td>{{book.email}}</td>
+                <td>{{book.message}}</td>
+                <td>{{book.name}}</td>
+              
+                
+    
+    
+                
+                 
+    
+               
+              </tr>
+            </tbody>
+          </table>
+        </div>
+       
+      </section>

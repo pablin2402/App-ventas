@@ -1,0 +1,123 @@
+<section id="register" class="mb-5 mt-5">
+
+        <div class="container">
+            <div class="row">
+        
+              <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+                <div class="card_register">
+        
+                  <div class="card">
+                        <h5 class="card-header">Actualizar Distribuidores</h5>
+
+                    <div class="card-body text-center">
+        
+                      
+                      <form (ngSubmit)="onSaveBook(formBook)" #formBook="ngForm">
+                      
+                            <div class="form-group">
+                                       
+
+                                    <input name="id"type="hidden" [(ngModel)]="this.dataApi.selectedBook.id" placeholder="Distribuidor" class="form-control">
+                                    
+                                
+                                  </div>
+
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Nombre</label>
+       
+                          <input type="text" name="nombre" placeholder="Ingrese su nombre" class="form-control"  [(ngModel)]="this.dataApi.selectedBook.nombre" >
+                            
+                        </div>
+        
+                            
+    
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Correo Electrónico</label>
+             
+                          <input type="email" name="correo" id ="email" [(ngModel)]="this.dataApi.selectedBook.correo"  class="form-control" placeholder="Ingrese su dirección de correo electrónico">
+                          <small id="emailHelp" class="form-text text-muted">No compartiremos tu dirección de correo electrónico con nadie.</small>
+       
+                        </div>
+        
+                           
+                        
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">País de Origen</label>
+    
+                            <input type="text"  [(ngModel)]="this.dataApi.selectedBook.pais"  name="pais" class="form-control" placeholder="Ingrese Pais de Origen">
+                          
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Teléfono</label>
+    
+                            <input type="number" [(ngModel)]="this.dataApi.selectedBook.telefono"   name="telefono" class="form-control" placeholder="Ingrese número de teléfono">
+                           
+                            
+                         </div>
+                        
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Latitud</label>
+    
+                            <input type="number"  [(ngModel)]="this.dataApi.selectedBook.latitud" name="latitud" class="form-control" placeholder="Latitud">
+                            
+                        </div>
+    
+                 <div class="form-group">
+                    <label for="exampleInputEmail1">Longitud</label>
+    
+                    <input type="number"   [(ngModel)]="this.dataApi.selectedBook.longitud" name="longitud" class="form-control" placeholder="Longitud">
+                
+                 </div>
+    
+    
+                <button class="btn btn-lg btn-primary btn-block" type="reset"  >Limpiar</button>
+    
+                <button class="btn btn-lg btn-primary btn-block" type="submit" routerLink="/dist"  >Cerrar</button>
+                <button class="btn btn-lg btn-primary btn-block" type="submit"  >Guardar</button>
+            
+              </form>
+          </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </section>
+    
+    
+        <div class="card mb-3">
+          <div class="card-body">
+              <h5 class="card-header">Mapa de Vendedores y Distribuidores</h5>
+      
+                        <agm-map [latitude]="lat" [longitude]="lng"
+                        [latitude]="lat"
+                        [longitude]="lng"
+                        [zoom]="zoom"
+                        [disableDefaultUI]="false"
+                        [zoomControl]="false"
+                        (mapClick)="mapClicked($event)"
+                            >
+                              <agm-marker
+                              *ngFor="let m of markers; let i = index"
+                              (markerClick)="clickedMarker(m.label, i)"
+                              [latitude]="m.lat"
+                              [longitude]="m.lng"
+                              [label]="m.label"
+                              [iconUrl]="m.iconUrl"
+                              (dragEnd)="markerDragEnd(m, $event)"
+      
+                              >
+                              <agm-info-window>
+                                      <strong>Latitud: </strong>{{m.lat}}
+                                       <strong>Longitud: </strong>{{m.lng}}
+                             
+                                     </agm-info-window>
+                               </agm-marker>
+                        
+                         </agm-map>
+      
+           <footer class="blockquote-footer"> © 2019, Dev-Thinking.com, Inc. o afiliados. Todos los derechos reservados.</footer>
+      
+      </div>
+      </div>

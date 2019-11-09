@@ -19,12 +19,12 @@ import { map } from 'rxjs/operators';
     }
     private booksCollection: AngularFirestoreCollection<WorkerInterface>;
     private books: Observable<WorkerInterface[]>;
+    public selectedBook: WorkerInterface = {
+      id: null
+    };
     private bookDoc: AngularFirestoreDocument<WorkerInterface>;
     private book: Observable<WorkerInterface>;
-    public selectedBook: WorkerInterface = {
-      
-    };
-
+   
   
     getAllBooks() {
       return this.books= this.booksCollection.snapshotChanges()
@@ -47,4 +47,10 @@ import { map } from 'rxjs/operators';
         this.bookDoc = this.afs.doc<WorkerInterface>(`vendedores/${idBook}`);
         this.bookDoc.delete();
     }
+    updateBook(book: WorkerInterface): void {
+      let idBook = book.id;
+      this.bookDoc = this.afs.doc<WorkerInterface>(`vendedores/${idBook}`);
+      this.bookDoc.update(book);
+    }
+
   }

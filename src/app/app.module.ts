@@ -11,14 +11,12 @@ import { CustommaterialModule } from './custommaterial.module';
 import { MatSliderModule } from '@angular/material/slider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule, MatSidenavContent, MatSidenavModule, MatToolbarModule, MatBadgeModule, MatListModule, MatTabsModule} from '@angular/material';
-import { ConfiguracionesComponent } from './components/configuraciones/configuraciones.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule} from '@angular/forms';
 import { AddBookComponent } from './components/add-book/add-book.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import {FlexLayoutModule } from '@angular/flex-layout';
-import {ModalComponent} from './components/modal/modal.component';
 import {AngularFireModule } from '@angular/fire';
 import {AngularFireDatabaseModule } from '@angular/fire/database';
 import{AngularFireAuth} from '@angular/fire/auth';
@@ -31,7 +29,6 @@ export const firebaseConfig =environment.firebaseConfig;
 import { environment } from '../environments/environment';
 import { HomeComponent } from './components/home/home.component';
 import { NavTabsComponent } from './components/nav-tabs/nav-tabs.component';
-import { RegistroComponent } from './components/registro/registro.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import{AngularFirestore}from '@angular/fire/firestore';
@@ -46,6 +43,12 @@ import { AddworkersComponent } from './workers/addworkers/addworkers.component';
 import { AdddisComponent } from './distribuidores/adddis/adddis.component';
 import { ListworkersComponent } from './workers/listworkers/listworkers.component';
 import { ListdistribuidoresComponent } from './distribuidores/listdistribuidores/listdistribuidores.component';
+import { AsignardistComponent } from './workers/asignardist/asignardist.component';
+import { ListcontactsComponent } from './contacts/listcontacts/listcontacts.component';
+
+import { UploadworkersComponent } from './workers/uploadworkers/uploadworkers.component';
+import { UploadbookComponent } from './components/uploadbook/uploadbook.component';
+import { ActualizarComponent } from './distribuidores/actualizar/actualizar.component';
 
 const MaterialComponents = [
   MatButtonModule
@@ -56,6 +59,7 @@ const MaterialComponents = [
   declarations: [
     AppComponent,
     ListcookiesComponent,
+    AsignardistComponent,
     ProfileComponent,
     HeaderComponent,
     AddworkersComponent,
@@ -63,20 +67,22 @@ const MaterialComponents = [
     AddcookieComponent,
     DetailsCookieComponent,
     FooterComponent,
-    ConfiguracionesComponent,
     AddBookComponent,
     NavbarComponent,
     HomeComponent,
     GoogleMapComponent,
-    ModalComponent,
     DetailsBookComponent,
-    RegistroComponent,
+    UploadworkersComponent,
     LoginComponent,
+    ListcontactsComponent,
     AdddisComponent,
+    UploadbookComponent,
+    ActualizarComponent,
     ListworkersComponent,
     ListdistribuidoresComponent,
     NavTabsComponent,
     AboutusComponent,
+  
     ContactoComponent
     
   ],

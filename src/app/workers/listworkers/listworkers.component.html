@@ -1,15 +1,24 @@
 <section class="row mt-5">
     <div class="col">
-      <button class="btn btn-primary float-right mb-3" data-toggle="modal"
-      routerLink="/workers">Nuevo Vendedor</button>
+      <h2 class="card-header">Vendedores</h2>
+      <br>
+
+      <div class="form-group">
+      
+        <button class="btn btn-primary float-right mb-3" routerLink="/workers">Nuevo Vendedor</button>
+      
+      </div>
+
       <table class="table table-hover">
-        <thead>
+        <thead>   
           <tr>
             <th scope="col">#</th>
+            <th scope="col">Id</th>
+
             <th scope="col">Nombre</th>
             <th scope="col">Apellido</th>
-            <th scope="col">Correo</th>
-            <th scope="col">Telefono</th>
+            <th scope="col">Correo Electrónico</th>
+            <th scope="col">Teléfono</th>
             <th scope="col">Longitud</th>
             <th scope="col">Latitud</th>
             
@@ -21,19 +30,23 @@
 
           <tr *ngFor="let book of books; index as i">
             <th scope="row">{{i+1}}</th>
+            <td>{{book.id}}</td>
+
             <td>{{book.nombre}}</td>
             <td>{{book.apellido}}</td>
-            <td>{{book.correo}}</td>
-            <td>{{book.telefono}}</td>
+            <td>{{book.email}}</td>
+            <td>{{book.telf}}</td>
             <td>{{book.longitud}}</td>
             <td>{{book.latitud}}</td>
             
 
-
-            
               <td>
-                <button class="btn btn-secondary" data-toggle="modal"
-                data-target="#modalBook" (click)="onPreUpdateBook(book)">Actualizar</button>
+                <button type="button"class="btn btn-primary float-right mb-3"  routerLink="/asignar" (click)="onPreUpdateBook(book)" >Asignar Distribuidor</button>
+
+              </td>
+              <td>
+                <button class="btn btn-secondary" 
+                (click)="onPreUpdateBook(book)" routerLink="/uploadw">Actualizar</button>
               </td>
            
             
@@ -47,3 +60,4 @@
       </table>
     </div>
   </section>
+  

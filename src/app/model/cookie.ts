@@ -1,6 +1,7 @@
 export interface CookieInterface{
 
     Alergenos?: string;
+    fondo?:string;
     descripcion?: string;
     ingredientes?: string;
     marca?: string;
@@ -9,7 +10,9 @@ export interface CookieInterface{
     portada?: string;
     precio?: string;
     id?: string;
-    userUid?: string;
+    oferta?:string;
+    imagen?:string;
+    
     descripcioncorta?: string;
 
 }

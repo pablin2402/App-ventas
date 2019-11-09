@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { WorkerService } from '../../services/worker.service';
 import { WorkerInterface } from '../../model/worker';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-listworkers',
@@ -9,13 +10,20 @@ import { WorkerInterface } from '../../model/worker';
 })
 export class ListworkersComponent implements OnInit {
 
-  constructor(private dataApi: WorkerService) { }
-  private books: WorkerInterface[];
+  constructor(
+    public dataApi: WorkerService,
+    public dialog: MatDialog
+    
+    ) { }
+    
+  
+  public books: WorkerInterface[];
 
   ngOnInit() {
     this.getListBooks();
 
   }
+ 
 
   getListBooks()
   {
@@ -33,12 +41,13 @@ export class ListworkersComponent implements OnInit {
       this.dataApi.deleteBook(idBook);
     }
   }
+ 
   onPreUpdateBook(book:WorkerInterface)
   {
     //this.dataApi.selectedBook=Object.assign({},book);
     console.log('BOOK',book);
     this.dataApi.selectedBook = Object.assign({}, book);
-
+    
   }
 
 }

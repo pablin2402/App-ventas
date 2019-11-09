@@ -1,0 +1,155 @@
+
+    <div class="container">
+       
+            <div class="card_register">
+    
+              <div class="card">
+                <h5 class="card-header">Asignar Vendedor a Distribuidor</h5>
+
+                <div class="card-body text-center">
+    
+                  
+                  <form [formGroup]="contacForm" (ngSubmit)="onSaveForm()" #formBook="ngForm" >
+                    <!--ETIQUETA OCULTAR ID -->
+                    <h5 > Datos del Vendedor</h5>
+                    <br>
+                    <br>
+
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Id Vendedor</label>
+
+                          <input type="text" formControlName="uid" [(ngModel)]="this.dataApi.selectedBook.id" placeholder="Id" class="form-control">
+                             
+                      </div>
+
+                      <div class="form-row">
+                          <div class="form-group col-md-6">
+                                <label for="exampleInputEmail1">Nombre del Vendedor</label>
+                  
+                                <input type="text" formControlName="vendedor" name="vendedor" id ="email" class="form-control" [(ngModel)]="this.dataApi.selectedBook.nombre"placeholder="Ingrese el vendedor">
+            
+                                      <div class="alert-danger" *ngIf="vendedor.invalid && (vendedor.dirty || vendedor.touched)">
+                                              <div class="container-error-message" *ngIf="vendedor.errors.required">
+                                                  El vendedor es obligatorio.
+                                              </div>
+                                            
+                                      </div>
+                            </div>
+                            <div class="form-group col-md-6">
+
+                                <label for="exampleInputEmail1">Fecha de Asignación</label>
+
+                                <input type="date" formControlName="fecha" name="fecha" class="form-control" placeholder="Ingrese la fecha">
+                                <div class="alert-danger" *ngIf="fecha.invalid && (fecha.dirty || fecha.touched)">
+                                    <div class="container-error-message" *ngIf="fecha.errors.required">
+                                        La fecha es de carácter obligatorio
+                                    </div>
+                                </div>
+                            </div>    
+
+                      </div>      
+                      <div class="dropdown-divider"></div>
+                      <br>
+                      <h5> Datos del Distribuidor</h5>
+                     
+                         <br>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Nombre del Distribuidor</label>
+   
+                      <input type="text" formControlName="distribuidor" placeholder="Distribuidor" class="form-control">
+                         <div class="alert-danger" *ngIf="distribuidor.invalid && (distribuidor.dirty || distribuidor.touched)">
+                            <div class="container-error-message" *ngIf="distribuidor.errors.required">
+                             Distribuidor es obligatorio
+                            </div>
+                        </div>
+                    </div>
+    
+                        
+
+                   
+                    
+                   
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+
+                              <label for="exampleInputEmail1">Latitud</label>
+
+                              <input type="text" formControlName="latituddistribuidor" name="latituddistribuidor" class="form-control" placeholder="Ingrese la latitud del Distribuidor">
+                              <div class="alert-danger" *ngIf="latituddistribuidor.invalid && (latituddistribuidor.dirty || latituddistribuidor.touched)">
+                                  <div class="container-error-message" *ngIf="latituddistribuidor.errors.required">
+                                     Es obligatorio ingresar la latitud.
+                                  </div>
+                              </div>
+                          </div>
+                            <div class="form-group col-md-6">
+
+                                    <label for="exampleInputEmail1">Longitud</label>
+
+                                    <input type="text" formControlName="longituddistribuidor" name="longituddistribuidor" class="form-control" placeholder="Ingrese la longitud del Distribuidor">
+                                  
+                                    <div class="alert-danger" *ngIf="longituddistribuidor.invalid && (longituddistribuidor.dirty || longituddistribuidor.touched)">
+                                        <div class="container-error-message" *ngIf="longituddistribuidor.errors.required">
+                                            Es obligatorio ingresar la longitud.
+                                        </div>
+                                    </div>
+                            </div>        
+                </div>
+
+                    
+                   
+             
+
+
+            <button class="btn btn-lg btn-primary btn-block" type="reset"  >Limpiar</button>
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit" routerLink="/dist"  >Cerrar</button>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!contacForm.valid" >Guardar</button>
+        
+          </form>
+      </div>
+    </div>
+   
+    </div>
+    </div>
+
+
+    <div class="card mb-3">
+      <div class="card-body">
+          <h5 class="card-header">Mapa de Vendedores y Distribuidores</h5>
+  
+                    <agm-map [latitude]="lat" [longitude]="lng"
+                    [latitude]="lat"
+                    [longitude]="lng"
+                    [zoom]="zoom"
+                    [disableDefaultUI]="false"
+                    [zoomControl]="false"
+                    (mapClick)="mapClicked($event)"
+                        >
+                          <agm-marker
+                          *ngFor="let m of markers; let i = index"
+                          (markerClick)="clickedMarker(m.label, i)"
+                          [latitude]="m.lat"
+                          [longitude]="m.lng"
+                          [label]="m.label"
+                          [iconUrl]="m.iconUrl"
+                          (dragEnd)="markerDragEnd(m, $event)"
+  
+                          >
+                          <agm-info-window>
+                              <strong>{{m.label}}</strong>
+                              <br>
+                                  <br>
+                              <strong>Latitud: </strong>{{m.lat}}
+                              <br>
+                              <strong>Longitud: </strong>{{m.lng}}
+                     
+                             </agm-info-window>
+                       </agm-marker>
+                    
+                     </agm-map>
+  
+       <footer class="blockquote-footer"> © 2019, Dev-Thinking.com, Inc. o afiliados. Todos los derechos reservados.</footer>
+  
+  </div>
+  </div>

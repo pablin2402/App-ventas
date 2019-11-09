@@ -55,11 +55,11 @@ export class CookieService {
   
   updateBook(book: CookieInterface): void {
     let idBook = book.id;
-    this.bookDoc = this.afs.doc<CookieInterface>(`books/${idBook}`);
+    this.bookDoc = this.afs.doc<CookieInterface>(`galletas/${idBook}`);
     this.bookDoc.update(book);
   }
   deleteBook(idBook: string): void {
-    this.bookDoc = this.afs.doc<CookieInterface>(`books/${idBook}`);
+    this.bookDoc = this.afs.doc<CookieInterface>(`galletas/${idBook}`);
     this.bookDoc.delete();
   }
   saveMessage(newContact: CookieInterface): void {

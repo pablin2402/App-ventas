@@ -34,6 +34,11 @@ import { map } from 'rxjs/operators';
         });
       }));
     }
+    updateBook(book: DistribuidorInterface): void {
+      let idBook = book.id;
+      this.bookDoc = this.afs.doc<DistribuidorInterface>(`distribuidores/${idBook}`);
+      this.bookDoc.update(book);
+    }
     deleteBook(idBook: string): void
     {
         this.bookDoc = this.afs.doc<DistribuidorInterface>(`distribuidores/${idBook}`);
